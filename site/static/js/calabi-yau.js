@@ -3,7 +3,7 @@
   var container = document.getElementById('calabi-yau');
   if (!container) return;
 
-  var SIZE = 120;
+  var SIZE = 150;
 
   var script = document.createElement('script');
   script.src = 'https://cdn.jsdelivr.net/npm/p5@1/lib/p5.min.js';

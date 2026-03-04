@@ -1,33 +1,17 @@
-/* Calabi-Yau 流形動畫 — 首頁標題旁 */
-
-/* 覆蓋 PaperMod 的 -webkit-box，改用現代 flex */
-.first-entry .entry-header.home-header-flex {
-    display: flex !important;
-    -webkit-box-orient: unset;
-    -webkit-line-clamp: unset;
-    overflow: visible;
-    align-items: center;
-    gap: 1rem;
-}
-
-.first-entry .entry-header.home-header-flex h1 {
-    -webkit-line-clamp: unset;
-    flex: 0 0 auto;
-}
-
-/* 佔據標題右側剩餘空間，canvas 置中顯示 */
+/* Calabi-Yau 流形動畫 — Profile Mode 頭像位置 */
 #calabi-yau {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    height: 120px;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 #calabi-yau canvas {
     display: block;
 }
 
-/* 小螢幕：隱藏動畫，讓標題完整呈現 */
+/* 小螢幕：隱藏動畫 */
 @media (max-width: 640px) {
     #calabi-yau {
         display: none;
