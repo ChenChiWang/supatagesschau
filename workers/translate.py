@@ -27,6 +27,7 @@ def call_ollama(prompt: str, temperature: float = 0.3, model: str = None) -> str
             "options": {
                 "temperature": temperature,
                 "num_predict": 8192,
+                "num_ctx": 8192,
             },
         },
         timeout=1800,
