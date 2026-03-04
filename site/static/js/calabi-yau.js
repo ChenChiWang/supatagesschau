@@ -1,9 +1,10 @@
-// Calabi-Yau 流形動畫（p5.js）— 首頁標題旁裝飾
+// Calabi-Yau 流形動畫（p5.js）— Profile 背景裝飾
 (function () {
   var container = document.getElementById('calabi-yau');
   if (!container) return;
 
-  var SIZE = 150;
+  // 取得 profile 區域寬度，限制最大 500px
+  var SIZE = Math.min(container.parentElement.offsetWidth || 500, 500);
 
   var script = document.createElement('script');
   script.src = 'https://cdn.jsdelivr.net/npm/p5@1/lib/p5.min.js';
@@ -26,7 +27,7 @@
         canvas.style('display', 'block');
         p.colorMode(p.HSB, 360, 100, 100, 100);
         p.noFill();
-        // 第一幀用完全不透明的背景色填滿，避免初始純黑
+        // 第一幀用完全不透明的背景色填滿
         var ctx = p.drawingContext;
         ctx.fillStyle = getBgRGBA(1);
         ctx.fillRect(0, 0, p.width, p.height);
@@ -47,7 +48,7 @@
 
           p.beginShape();
           p.stroke(hue, 70, 100, 70);
-          p.strokeWeight(1.2);
+          p.strokeWeight(1.6);
 
           var steps = 200;
           for (var i = 0; i <= steps; i++) {
@@ -67,7 +68,7 @@
 
           p.beginShape();
           p.stroke(hue, 50, 85, 40);
-          p.strokeWeight(0.7);
+          p.strokeWeight(0.9);
 
           for (var j = 0; j <= steps; j++) {
             var a2 = (j / steps) * p.TWO_PI;

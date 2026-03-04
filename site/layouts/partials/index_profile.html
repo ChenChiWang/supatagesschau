@@ -1,7 +1,7 @@
 <div class="profile">
+    <div id="calabi-yau"></div>
     {{- with site.Params.profileMode }}
     <div class="profile_inner">
-        <div id="calabi-yau"></div>
         <h1>{{ .title | default site.Title | markdownify }}</h1>
         <span>{{ .subtitle | markdownify }}</span>
         {{- partial "social_icons.html" -}}

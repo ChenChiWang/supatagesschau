@@ -1,19 +1,24 @@
-/* Calabi-Yau 流形動畫 — Profile Mode 頭像位置 */
-#calabi-yau {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto 1rem;
-    border-radius: 50%;
+/* Calabi-Yau 流形動畫 — Profile 背景 */
+.profile {
+    position: relative;
     overflow: hidden;
+}
+
+#calabi-yau {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    opacity: 0.4;
+    pointer-events: none;
 }
 
 #calabi-yau canvas {
     display: block;
 }
 
-/* 小螢幕：隱藏動畫 */
-@media (max-width: 640px) {
-    #calabi-yau {
-        display: none;
-    }
+.profile_inner {
+    position: relative;
+    z-index: 1;
 }
