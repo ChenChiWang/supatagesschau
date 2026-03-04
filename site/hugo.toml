@@ -1,6 +1,6 @@
 baseURL = "https://supatagsschau.jwais.com/"
 languageCode = "zh-tw"
-title = "每日德語 — tagesschau 新聞學德文"
+title = "每日德語"
 theme = "PaperMod"
 paginate = 10
 
@@ -51,26 +51,11 @@ paginate = 10
   home = ["HTML", "RSS", "JSON"]
 
 [[menu.main]]
-  name = "每日新聞"
+  name = "首頁"
   url = "/"
   weight = 1
 
 [[menu.main]]
-  name = "🟢 A1 入門"
-  url = "/levels/a1/"
-  weight = 2
-
-[[menu.main]]
-  name = "🟡 A2 初級"
-  url = "/levels/a2/"
-  weight = 3
-
-[[menu.main]]
-  name = "🔴 B1 中級"
-  url = "/levels/b1/"
-  weight = 4
-
-[[menu.main]]
-  name = "所有標籤"
+  name = "標籤"
   url = "/tags/"
-  weight = 5
+  weight = 2
