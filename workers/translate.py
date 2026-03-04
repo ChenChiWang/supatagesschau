@@ -2,6 +2,7 @@
 
 import json
 import logging
+import os
 
 import requests
 
@@ -139,12 +140,18 @@ def translate_and_analyze(segments: list[dict]) -> dict:
         segments: 翻譯後的 segments（含 de + zh）
         levels: CEFR 學習內容（A1, A2, B1）
     """
+    # 測試模式：限制批次數
+    max_batches = int(os.getenv("MAX_BATCHES", "0")) or None
+
     # 分批翻譯
     all_translated = []
     for i in range(0, len(segments), BATCH_SIZE):
         batch = segments[i:i + BATCH_SIZE]
         batch_num = i // BATCH_SIZE + 1
         total_batches = (len(segments) + BATCH_SIZE - 1) // BATCH_SIZE
+        if max_batches and batch_num > max_batches:
+            logger.info(f"測試模式：已達 {max_batches} 批上限，跳過剩餘批次")
+            break
         logger.info(f"翻譯第 {batch_num}/{total_batches} 批（{len(batch)} segments）")
         translated = translate_batch(batch)
         all_translated.extend(translated)
