@@ -4,7 +4,7 @@
   if (!container) return;
 
   // 取得 profile 區域寬度，限制最大 500px
-  var SIZE = Math.min(container.parentElement.offsetWidth || 500, 500);
+  var SIZE = Math.min(container.parentElement.offsetWidth || 800, 800);
 
   var script = document.createElement('script');
   script.src = 'https://cdn.jsdelivr.net/npm/p5@1/lib/p5.min.js';
