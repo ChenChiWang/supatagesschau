@@ -16,14 +16,17 @@ BATCH_SIZE = 8
 
 
 def call_ollama(prompt: str, temperature: float = 0.3, model: str = None) -> str:
-    """呼叫 Ollama API，回傳生成的文字。"""
+    """呼叫 Ollama API（chat endpoint），回傳生成的文字。"""
     use_model = model or config.OLLAMA_MODEL
     resp = requests.post(
-        f"{config.OLLAMA_API_URL}/api/generate",
+        f"{config.OLLAMA_API_URL}/api/chat",
         json={
             "model": use_model,
-            "prompt": "/no_think\n" + prompt,
+            "messages": [
+                {"role": "user", "content": prompt},
+            ],
             "stream": False,
+            "think": False,
             "options": {
                 "temperature": temperature,
                 "num_predict": 8192,
@@ -33,7 +36,7 @@ def call_ollama(prompt: str, temperature: float = 0.3, model: str = None) -> str
         timeout=1800,
     )
     resp.raise_for_status()
-    return resp.json()["response"]
+    return resp.json()["message"]["content"]
 
 
 def translate_batch(segments: list[dict]) -> list[dict]:
