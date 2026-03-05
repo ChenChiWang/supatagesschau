@@ -51,6 +51,34 @@ def call_ollama(
     return resp.json()["message"]["content"]
 
 
+def fix_json_newlines(text: str) -> str:
+    """修復 JSON 字串值中的未轉義換行符（LLM 常見問題）。"""
+    result = []
+    in_string = False
+    i = 0
+    while i < len(text):
+        ch = text[i]
+        if ch == "\\" and in_string and i + 1 < len(text):
+            # 保留轉義序列
+            result.append(ch)
+            result.append(text[i + 1])
+            i += 2
+            continue
+        if ch == '"':
+            in_string = not in_string
+            result.append(ch)
+        elif ch == "\n" and in_string:
+            result.append("\\n")
+        elif ch == "\r" and in_string:
+            pass
+        elif ch == "\t" and in_string:
+            result.append("\\t")
+        else:
+            result.append(ch)
+        i += 1
+    return "".join(result)
+
+
 def repair_json(text: str) -> str:
     """嘗試修復不完整的 JSON（截斷造成的未關閉括號）。"""
     # 移除 markdown code block 標記
@@ -176,9 +204,42 @@ def translate_batch(segments: list[dict]) -> list[dict]:
     return translated
 
 
+def parse_llm_json(text: str) -> dict:
+    """解析 LLM 回傳的 JSON，依序嘗試：直接解析 → 修復換行 → 修復截斷。"""
+    # 1. 直接解析
+    try:
+        start_idx = text.index("{")
+        end_idx = text.rindex("}") + 1
+        return json.loads(text[start_idx:end_idx])
+    except (ValueError, json.JSONDecodeError):
+        pass
+
+    # 2. 修復字串內的未轉義換行符（LLM 最常見問題）
+    try:
+        fixed = fix_json_newlines(text)
+        start_idx = fixed.index("{")
+        end_idx = fixed.rindex("}") + 1
+        return json.loads(fixed[start_idx:end_idx])
+    except (ValueError, json.JSONDecodeError):
+        pass
+
+    # 3. 修復換行 + 修復截斷
+    try:
+        fixed = fix_json_newlines(text)
+        repaired = repair_json(fixed)
+        return json.loads(repaired)
+    except (ValueError, json.JSONDecodeError):
+        pass
+
+    raise json.JSONDecodeError("所有修復方式都失敗", text[:200], 0)
+
+
 def analyze_cefr(timestamped_transcript: str) -> dict:
     """分析全文，按 CEFR 等級提取學習內容。含重試和 JSON 修復。"""
-    prompt = f"""你是專業的德語教學專家。請分析以下德語新聞逐字稿，按 CEFR 等級提取學習內容。
+    prompt = f"""你是專業的德語教學專家，目標讀者是台灣的德語學習者。
+請分析以下德語新聞逐字稿，按 CEFR 等級提取學習內容。
+
+⚠️ 最重要的規則：所有輸出（summary_zh、meaning、example_zh、chinese、explanation、translation、note）一律使用繁體中文（台灣用語），絕對不可以用德文或英文。
 
 分級標準：
 - A1（初學者）：最基礎的詞彙和句型（sein/haben、現在式、W-Fragen、基本語序 SVO）
@@ -190,8 +251,7 @@ def analyze_cefr(timestamped_transcript: str) -> dict:
 - 文法 Grammatik：A1 約 2 個、A2 約 3 個、B1 約 3 個
 - 句型 Satzmuster：A1 約 2 個、A2 約 2 個、B1 約 2 個
 
-重要：
-- 必須使用繁體中文（台灣用語）
+其他要求：
 - 所有例句必須來自逐字稿原文
 - 如果某等級找不到好例子，寧可少放也不要硬湊
 - 名詞務必標注性別（der/die/das）
@@ -199,23 +259,24 @@ def analyze_cefr(timestamped_transcript: str) -> dict:
 - 文法術語一律使用德文原文：Nominativ、Akkusativ、Dativ、Genitiv（不要用「第一格、第二格、第三格、第四格」）
 - 動詞搭配格位時寫法範例：「接 Akkusativ」「與 Dativ 搭配」「支配 Genitiv」
 
-另外，請在 JSON 最外層加一個 "summary_zh" 欄位，以 Markdown 條列式整理本集新聞重點摘要：
-- 每則新聞主題一個條目，用 `- **主題關鍵詞**：一句話摘要` 格式
+另外，請在 JSON 最外層加一個 "summary_zh" 欄位：
+- 用繁體中文條列式整理本集新聞重點摘要
+- 每則新聞主題一個條目，格式：「- **主題關鍵詞**：一句話摘要」
 - 涵蓋所有報導主題，不限條數
-- 必須使用繁體中文（台灣用語）
+- summary_zh 的值是一個字串，用 \\n 分隔每個條目
 
-請只輸出 JSON，不要加 markdown code block 標記，格式如下：
+請只輸出合法 JSON（不要 markdown code block），字串中的換行用 \\n 表示：
 {{
-  "summary_zh": "- **主題一**：摘要內容\\n- **主題二**：摘要內容\\n...",
+  "summary_zh": "- **主題一**：摘要\\n- **主題二**：摘要",
   "A1": {{
     "vocabulary": [
-      {{"word": "德文單字", "article": "der/die/das（名詞才需要）", "meaning": "中文意思", "example": "逐字稿中的例句", "example_zh": "例句翻譯", "time": "MM:SS"}}
+      {{"word": "德文單字", "article": "der/die/das", "meaning": "繁體中文意思", "example": "逐字稿例句", "example_zh": "繁體中文翻譯", "time": "MM:SS"}}
     ],
     "grammar": [
-      {{"rule": "文法規則名稱（德文＋中文）", "german": "逐字稿中的例句", "chinese": "中文翻譯", "explanation": "詳細解說（繁體中文）", "time": "MM:SS"}}
+      {{"rule": "文法規則（德文＋中文）", "german": "逐字稿例句", "chinese": "繁體中文翻譯", "explanation": "繁體中文詳細解說", "time": "MM:SS"}}
     ],
     "patterns": [
-      {{"pattern": "句型結構（如 Subjekt + Verb + Objekt）", "example": "逐字稿中的例句", "translation": "中文翻譯", "note": "使用情境說明", "time": "MM:SS"}}
+      {{"pattern": "句型結構", "example": "逐字稿例句", "translation": "繁體中文翻譯", "note": "繁體中文使用情境說明", "time": "MM:SS"}}
     ]
   }},
   "A2": {{ ... }},
@@ -241,26 +302,21 @@ def analyze_cefr(timestamped_transcript: str) -> dict:
             num_predict=CEFR_NUM_PREDICT,
         )
 
-        # 第一次嘗試：直接解析
         try:
-            start_idx = result.index("{")
-            end_idx = result.rindex("}") + 1
-            data = json.loads(result[start_idx:end_idx])
-            logger.info("CEFR JSON 解析成功")
+            data = parse_llm_json(result)
+            # 驗證結果完整性
+            has_content = any(
+                data.get(level, {}).get("vocabulary")
+                for level in ["A1", "A2", "B1"]
+            )
+            if not has_content:
+                logger.warning("CEFR JSON 解析成功但內容為空，重試中...")
+                continue
+            logger.info("CEFR JSON 解析成功且內容完整")
             summary_zh = data.pop("summary_zh", "")
             return {"summary_zh": summary_zh, "levels": data}
         except (ValueError, json.JSONDecodeError) as e:
-            logger.warning(f"CEFR JSON 直接解析失敗：{e}")
-
-        # 第二次嘗試：修復 JSON
-        try:
-            repaired = repair_json(result)
-            data = json.loads(repaired)
-            logger.info("CEFR JSON 修復後解析成功")
-            summary_zh = data.pop("summary_zh", "")
-            return {"summary_zh": summary_zh, "levels": data}
-        except (ValueError, json.JSONDecodeError) as e2:
-            logger.warning(f"CEFR JSON 修復後仍失敗：{e2}")
+            logger.warning(f"CEFR JSON 解析失敗：{e}")
             logger.error(f"原始回應前 500 字：{result[:500]}")
 
     logger.error("CEFR 分析全部重試失敗，使用空白降級處理")
