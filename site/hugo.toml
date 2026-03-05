@@ -19,7 +19,7 @@ paginate = 10
   [params.profileMode]
     enabled = true
     title = "每日德語"
-    subtitle = "每天擷取 tagesschau 20 Uhr 新聞 Podcast 為中文閱讀新聞與學習德文材料"
+    subtitle = "每天擷取 tagesschau 20 Uhr 新聞 Podcast<br>為中文新聞閱讀與德文學習"
 
     [[params.profileMode.buttons]]
       name = "📰 所有文章"
