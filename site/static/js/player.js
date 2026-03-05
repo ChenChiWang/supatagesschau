@@ -130,6 +130,46 @@ function switchCefrTab(level) {
   });
 }
 
+// --- Media Session（背景播放 + 鎖屏控制）---
+function setupMediaSession() {
+  if (!("mediaSession" in navigator)) return;
+
+  var title = document.title || "每日德語";
+  navigator.mediaSession.metadata = new MediaMetadata({
+    title: title,
+    artist: "tagesschau 20 Uhr",
+    album: "每日德語",
+    artwork: [
+      { src: "/fh_feature.jpg", sizes: "1200x630", type: "image/jpeg" }
+    ]
+  });
+
+  function getActivePlayer() {
+    var videoContainer = document.getElementById("video-container");
+    if (videoContainer && videoContainer.style.display !== "none") {
+      return document.getElementById("video-player");
+    }
+    return document.getElementById("audio-player");
+  }
+
+  navigator.mediaSession.setActionHandler("play", function () {
+    var p = getActivePlayer();
+    if (p) p.play();
+  });
+  navigator.mediaSession.setActionHandler("pause", function () {
+    var p = getActivePlayer();
+    if (p) p.pause();
+  });
+  navigator.mediaSession.setActionHandler("seekbackward", function () {
+    var p = getActivePlayer();
+    if (p) p.currentTime = Math.max(0, p.currentTime - 10);
+  });
+  navigator.mediaSession.setActionHandler("seekforward", function () {
+    var p = getActivePlayer();
+    if (p) p.currentTime = Math.min(p.duration || 0, p.currentTime + 10);
+  });
+}
+
 // --- 初始化 ---
 document.addEventListener("DOMContentLoaded", function () {
   // 載入 segments 資料
@@ -186,4 +226,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, { threshold: 0 });
     observer.observe(mediaPlayer);
   }
+
+  // 背景播放 + 鎖屏控制
+  setupMediaSession();
 });
