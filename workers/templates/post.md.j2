@@ -17,6 +17,10 @@ summary: "{{ topics[:3] | join('、') }}"
 
 {% raw %}{{< media-player >}}{% endraw %}
 
+<script type="application/json" id="segments-data">
+{{ segments | tojson }}
+</script>
+
 ## 📝 逐字稿 Transkript
 
 <div class="transcript-table">
@@ -29,13 +33,21 @@ summary: "{{ topics[:3] | join('、') }}"
 
 </div>
 
-{% if levels.get("A1") and (levels.A1.vocabulary or levels.A1.grammar or levels.A1.patterns) %}
----
+{% if active_levels %}
+<div class="cefr-tabs">
+{%- for level in active_levels %}
+  <button class="cefr-tab{% if loop.first %} active{% endif %}" data-level="{{ level }}">{% if level == "A1" %}🟢 A1 初學{% elif level == "A2" %}🟡 A2 初級{% elif level == "B1" %}🔴 B1 中級{% endif %}</button>
+{%- endfor %}
+</div>
+{% endif %}
 
-## 🟢 A1 — 初學者區 Anfänger
+{% if levels.get("A1") and (levels.A1.vocabulary or levels.A1.grammar or levels.A1.patterns) %}
+<div class="cefr-content{% if "A1" == active_levels[0] %} active{% endif %}" data-level="A1">
+
+### 🟢 A1 — 初學者區 Anfänger
 
 {% if levels.A1.vocabulary %}
-### 📖 單字 Wortschatz
+#### 📖 單字 Wortschatz
 
 | 單字 | 詞性/冠詞 | 中文 | 例句 | 例句翻譯 |
 |:-----|:----------|:-----|:-----|:---------|
@@ -45,7 +57,7 @@ summary: "{{ topics[:3] | join('、') }}"
 
 {% endif %}
 {% if levels.A1.grammar %}
-### 📝 文法 Grammatik
+#### 📝 文法 Grammatik
 
 {% for g in levels.A1.grammar %}
 <details>
@@ -62,7 +74,7 @@ summary: "{{ topics[:3] | join('、') }}"
 {% endfor %}
 {% endif %}
 {% if levels.A1.patterns %}
-### 💬 句型 Satzmuster
+#### 💬 句型 Satzmuster
 
 {% for p in levels.A1.patterns %}
 - **{{ p.pattern }}**
@@ -72,15 +84,17 @@ summary: "{{ topics[:3] | join('、') }}"
 
 {% endfor %}
 {% endif %}
+
+</div>
 {% endif %}
 
 {% if levels.get("A2") and (levels.A2.vocabulary or levels.A2.grammar or levels.A2.patterns) %}
----
+<div class="cefr-content{% if "A2" == active_levels[0] %} active{% endif %}" data-level="A2">
 
-## 🟡 A2 — 初級區 Grundstufe
+### 🟡 A2 — 初級區 Grundstufe
 
 {% if levels.A2.vocabulary %}
-### 📖 單字 Wortschatz
+#### 📖 單字 Wortschatz
 
 | 單字 | 詞性/冠詞 | 中文 | 例句 | 例句翻譯 |
 |:-----|:----------|:-----|:-----|:---------|
@@ -90,7 +104,7 @@ summary: "{{ topics[:3] | join('、') }}"
 
 {% endif %}
 {% if levels.A2.grammar %}
-### 📝 文法 Grammatik
+#### 📝 文法 Grammatik
 
 {% for g in levels.A2.grammar %}
 <details>
@@ -107,7 +121,7 @@ summary: "{{ topics[:3] | join('、') }}"
 {% endfor %}
 {% endif %}
 {% if levels.A2.patterns %}
-### 💬 句型 Satzmuster
+#### 💬 句型 Satzmuster
 
 {% for p in levels.A2.patterns %}
 - **{{ p.pattern }}**
@@ -117,15 +131,17 @@ summary: "{{ topics[:3] | join('、') }}"
 
 {% endfor %}
 {% endif %}
+
+</div>
 {% endif %}
 
 {% if levels.get("B1") and (levels.B1.vocabulary or levels.B1.grammar or levels.B1.patterns) %}
----
+<div class="cefr-content{% if "B1" == active_levels[0] %} active{% endif %}" data-level="B1">
 
-## 🔴 B1 — 中級區 Mittelstufe
+### 🔴 B1 — 中級區 Mittelstufe
 
 {% if levels.B1.vocabulary %}
-### 📖 單字 Wortschatz
+#### 📖 單字 Wortschatz
 
 | 單字 | 詞性/冠詞 | 中文 | 例句 | 例句翻譯 |
 |:-----|:----------|:-----|:-----|:---------|
@@ -135,7 +151,7 @@ summary: "{{ topics[:3] | join('、') }}"
 
 {% endif %}
 {% if levels.B1.grammar %}
-### 📝 文法 Grammatik
+#### 📝 文法 Grammatik
 
 {% for g in levels.B1.grammar %}
 <details>
@@ -152,7 +168,7 @@ summary: "{{ topics[:3] | join('、') }}"
 {% endfor %}
 {% endif %}
 {% if levels.B1.patterns %}
-### 💬 句型 Satzmuster
+#### 💬 句型 Satzmuster
 
 {% for p in levels.B1.patterns %}
 - **{{ p.pattern }}**
@@ -162,6 +178,8 @@ summary: "{{ topics[:3] | join('、') }}"
 
 {% endfor %}
 {% endif %}
+
+</div>
 {% endif %}
 
 ---

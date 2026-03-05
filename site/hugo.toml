@@ -22,17 +22,11 @@ paginate = 10
     subtitle = "每天自動擷取 tagesschau 20 Uhr 新聞 Podcast，透過 AI 產生德語逐字稿、繁中翻譯和 CEFR 分級學習內容。"
 
     [[params.profileMode.buttons]]
-      name = "🟢 A1 入門"
-      url = "/levels/a1/"
-    [[params.profileMode.buttons]]
-      name = "🟡 A2 初級"
-      url = "/levels/a2/"
-    [[params.profileMode.buttons]]
-      name = "🔴 B1 中級"
-      url = "/levels/b1/"
-    [[params.profileMode.buttons]]
       name = "📰 所有文章"
       url = "/archives/"
+    [[params.profileMode.buttons]]
+      name = "🏷️ 主題標籤"
+      url = "/tags/"
 
   [[params.socialIcons]]
     name = "rss"
