@@ -185,23 +185,23 @@ def translate_batch(segments: list[dict]) -> list[dict]:
 德語逐字稿：
 {segments_text}"""
 
-    result = call_ollama(prompt, model=config.OLLAMA_MODEL_FAST)
+    for attempt in range(1, 3):
+        result = call_ollama(prompt, model=config.OLLAMA_MODEL_FAST, num_predict=4096)
+        try:
+            start_idx = result.index("[")
+            end_idx = result.rindex("]") + 1
+            translated = json.loads(result[start_idx:end_idx])
+            return translated
+        except (ValueError, json.JSONDecodeError) as e:
+            logger.warning(f"翻譯 JSON 解析失敗（第 {attempt}/2 次）：{e}")
+            logger.error(f"原始回應：{result[:500]}")
 
-    # 從回應中擷取 JSON
-    try:
-        start_idx = result.index("[")
-        end_idx = result.rindex("]") + 1
-        translated = json.loads(result[start_idx:end_idx])
-    except (ValueError, json.JSONDecodeError) as e:
-        logger.error(f"翻譯結果 JSON 解析失敗：{e}")
-        logger.error(f"原始回應：{result[:500]}")
-        # 降級處理：保留原文，翻譯標記為失敗
-        translated = [
-            {"start": s["start"], "end": s["end"], "de": s["text"], "zh": "[翻譯失敗]"}
-            for s in segments
-        ]
-
-    return translated
+    # 全部失敗，降級處理
+    logger.error("翻譯重試全部失敗，使用降級處理")
+    return [
+        {"start": s["start"], "end": s["end"], "de": s["text"], "zh": "[翻譯失敗]"}
+        for s in segments
+    ]
 
 
 def merge_split_strings(text: str) -> str:
