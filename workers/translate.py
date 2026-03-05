@@ -273,17 +273,20 @@ def analyze_cefr(timestamped_transcript: str) -> dict:
     prompt = f"""你是專業的德語教學專家，目標讀者是台灣的德語學習者。
 請分析以下德語新聞逐字稿，按 CEFR 等級提取學習內容。
 
-⚠️ 最重要的規則：所有輸出（summary_zh、meaning、example_zh、chinese、explanation、translation、note）一律使用繁體中文（台灣用語），絕對不可以用德文或英文。
+⚠️ 最重要的規則 — 違反即為失敗：
+1. summary_zh 必須是繁體中文，禁止出現任何德文或英文
+2. 所有 meaning、example_zh、chinese、explanation、translation、note 欄位必須是繁體中文
+3. 只有 word、example、german、pattern 這些「德語原文」欄位才用德文
 
 分級標準：
 - A1（初學者）：最基礎的詞彙和句型（sein/haben、現在式、W-Fragen、基本語序 SVO）
 - A2（初級）：日常生活進階（Perfekt/Präteritum、weil/dass 從句、Dativ 介詞、反身動詞）
 - B1（中級）：新聞理解所需（Konjunktiv II、Passiv、zu+Infinitiv、間接引語、複雜從句）
 
-提取目標：
-- 單字 Wortschatz：A1 約 5 個、A2 約 6 個、B1 約 6 個
-- 文法 Grammatik：A1 約 2 個、A2 約 3 個、B1 約 3 個
-- 句型 Satzmuster：A1 約 2 個、A2 約 2 個、B1 約 2 個
+提取目標（盡量填滿，從逐字稿中多找例子）：
+- 單字 Wortschatz：A1 約 8 個、A2 約 10 個、B1 約 10 個
+- 文法 Grammatik：A1 約 3 個、A2 約 4 個、B1 約 4 個
+- 句型 Satzmuster：A1 約 3 個、A2 約 4 個、B1 約 4 個
 
 其他要求：
 - 所有例句必須來自逐字稿原文
@@ -294,14 +297,16 @@ def analyze_cefr(timestamped_transcript: str) -> dict:
 - 動詞搭配格位時寫法範例：「接 Akkusativ」「與 Dativ 搭配」「支配 Genitiv」
 
 另外，請在 JSON 最外層加一個 "summary_zh" 欄位：
-- 用繁體中文條列式整理本集新聞重點摘要
-- 每則新聞主題一個條目，格式：「- **主題關鍵詞**：一句話摘要」
+- 用繁體中文條列式整理本集新聞重點摘要（⚠️ 必須全部是繁體中文，不可以有德文）
+- 每則新聞主題一個條目，格式：「- **中文主題關鍵詞**：一句話中文摘要」
 - 涵蓋所有報導主題，不限條數
 - summary_zh 的值是一個字串，用 \\n 分隔每個條目
+- 正確範例：「- **中東戰爭**：伊朗對以色列發動攻擊」
+- 錯誤範例：「- **Nahostkrieg**：Iran greift Israel an」← 這是錯的！
 
 請只輸出合法 JSON（不要 markdown code block），字串中的換行用 \\n 表示：
 {{
-  "summary_zh": "- **主題一**：摘要\\n- **主題二**：摘要",
+  "summary_zh": "- **中東局勢**：摘要內容\\n- **德國政治**：摘要內容",
   "A1": {{
     "vocabulary": [
       {{"word": "德文單字", "article": "der/die/das", "meaning": "繁體中文意思", "example": "逐字稿例句", "example_zh": "繁體中文翻譯", "time": "MM:SS"}}
@@ -346,8 +351,17 @@ def analyze_cefr(timestamped_transcript: str) -> dict:
             if not has_content:
                 logger.warning("CEFR JSON 解析成功但內容為空，重試中...")
                 continue
-            logger.info("CEFR JSON 解析成功且內容完整")
+            # 驗證 summary_zh 是中文（偵測德文輸出）
             summary_zh = data.pop("summary_zh", "")
+            if summary_zh:
+                # 計算中文字元比例（CJK Unified Ideographs）
+                cjk_chars = sum(1 for c in summary_zh if '\u4e00' <= c <= '\u9fff')
+                total_alpha = sum(1 for c in summary_zh if c.isalpha())
+                cjk_ratio = cjk_chars / max(total_alpha, 1)
+                if cjk_ratio < 0.3:
+                    logger.warning(f"summary_zh 中文比例過低（{cjk_ratio:.0%}），疑似德文輸出，重試中...")
+                    continue
+            logger.info("CEFR JSON 解析成功且內容完整")
             return {"summary_zh": summary_zh, "levels": data}
         except (ValueError, json.JSONDecodeError) as e:
             logger.warning(f"CEFR JSON 解析失敗：{e}")
