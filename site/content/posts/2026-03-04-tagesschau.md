@@ -107,31 +107,6 @@ summary: "Fünfter Tag im Nahost-Krieg: Angriffe gehen weiter、Aktuelle Stunde 
 
 </div>
 
-<div class="cefr-content" data-level="summary">
-
-### 📋 本集摘要 Zusammenfassung
-
-**tagesschau 20:00 Uhr, 04.03.2026**
-
-本集主題：
-- Fünfter Tag im Nahost-Krieg: Angriffe gehen weiter
-- Aktuelle Stunde im Bundestag zum Krieg im Nahen Osten
-- Bundesregierung plant keine Spritpreisbremse
-- 'Made in Europe': EU-Kommission will Industrie in Europa stärken
-- Neues Regierungsbündnis aus SPD und CDU in Brandenburg stellt Koalitionsvertrag vor
-- Nach Diskussion über Israel: Berlinale-Chefin Tricia Tuttle bleibt im Amt
-- Vorgaben des Reformstaatsvertrags: ARD und ZDF bündeln Aufgaben und stellen zum Jahresende drei Sender ein
-
-#### 📊 學習內容總覽
-
-| 等級 | 單字 | 文法 | 句型 |
-|:-----|:-----|:-----|:-----|
-| 🟢 A1 | 5 個 | 2 個 | 2 個 |
-| 🟡 A2 | 6 個 | 3 個 | 2 個 |
-| 🔴 B1 | 6 個 | 3 個 | 3 個 |
-
-</div>
-
 <div class="cefr-content" data-level="A1">
 
 ### 🟢 A1 — 初學者區 Anfänger

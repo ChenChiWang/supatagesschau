@@ -1,22 +1,28 @@
-/* === 全站字型 === */
+/* ========================================
+   Tagesschau 每日德語 — 全站樣式
+   ======================================== */
+
+/* === 全站字型與基礎排版 === */
 body {
   font-family: "Inter", "Noto Sans TC", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.75;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Inter", "Noto Sans TC", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, sans-serif;
   font-weight: 700;
+  line-height: 1.35;
 }
 
 /* === 播放器 === */
 .media-player {
   margin: 1.5rem 0;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 1rem;
   background: var(--code-bg);
 }
@@ -28,14 +34,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .player-toggle {
-  padding: 0.4rem 1rem;
+  padding: 0.45rem 1rem;
   border: 1px solid var(--border);
-  border-radius: 4px;
+  border-radius: 6px;
   background: transparent;
   color: var(--primary);
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
+  font-weight: 500;
   transition: all 0.2s;
+}
+
+.player-toggle:hover {
+  background: var(--code-bg);
 }
 
 .player-toggle.active {
@@ -48,15 +59,15 @@ h1, h2, h3, h4, h5, h6 {
 .subtitle-bar {
   background: var(--code-bg);
   border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  padding: 0.625rem 1rem;
   margin-top: 0.75rem;
-  min-height: 2.5rem;
+  min-height: 2.75rem;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.75rem;
-  font-size: 0.9rem;
-  line-height: 1.4;
+  font-size: 0.9375rem;
+  line-height: 1.6;
 }
 
 .subtitle-bar.sticky {
@@ -67,95 +78,66 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 100;
   border-radius: 0;
   margin: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  padding: 0.4rem 1rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  padding: 0.5rem 1rem;
 }
 
 .subtitle-time {
-  font-family: monospace;
+  font-family: "SF Mono", "Fira Code", "Consolas", monospace;
   color: var(--primary);
-  font-size: 0.85rem;
+  font-size: 0.8125rem;
   white-space: nowrap;
   min-width: 3rem;
-  align-self: flex-start;
-  margin-top: 0.15rem;
+  margin-top: 0.2rem;
+  opacity: 0.85;
 }
 
 .subtitle-de {
   flex: 1;
   font-weight: 500;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .subtitle-zh-line {
   display: block;
   color: var(--secondary);
-  font-size: 0.88em;
+  font-size: 0.875em;
   font-weight: 400;
-  margin-top: 0.15rem;
-}
-
-/* 手機版字幕加大 */
-@media (max-width: 768px) {
-  .subtitle-bar {
-    font-size: 0.85rem;
-    padding: 0.4rem 0.75rem;
-    gap: 0.5rem;
-  }
-  .subtitle-bar.sticky {
-    padding: 0.35rem 0.75rem;
-  }
-  .subtitle-zh-line {
-    font-size: 0.92em;
-  }
-}
-
-/* === 時間戳連結 === */
-.ts-link {
-  color: var(--primary);
-  cursor: pointer;
-  font-family: monospace;
-  font-size: 0.85rem;
-  white-space: nowrap;
-}
-
-.ts-link:hover {
-  text-decoration: underline;
-}
-
-/* === 逐字稿表格 === */
-.transcript-table table {
-  width: 100%;
-  font-size: 0.9rem;
-}
-
-.transcript-table td:first-child {
-  width: 60px;
-  white-space: nowrap;
-  vertical-align: top;
+  margin-top: 0.2rem;
+  line-height: 1.55;
 }
 
 /* === CEFR Tab 切換 === */
 .cefr-tabs {
   display: flex;
-  gap: 0.5rem;
-  margin: 1.5rem 0 0.5rem;
+  gap: 0.25rem;
+  margin: 1.75rem 0 0;
   border-bottom: 2px solid var(--border);
   padding-bottom: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.cefr-tabs::-webkit-scrollbar {
+  display: none;
 }
 
 .cefr-tab {
-  padding: 0.5rem 1.2rem;
+  padding: 0.5rem 1.1rem;
   border: 1px solid var(--border);
   border-bottom: none;
   border-radius: 6px 6px 0 0;
   background: transparent;
   color: var(--primary);
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
+  font-weight: 500;
   transition: all 0.2s;
   position: relative;
   bottom: -2px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .cefr-tab:hover {
@@ -185,71 +167,358 @@ h1, h2, h3, h4, h5, h6 {
   border-top: 3px solid #f44336;
 }
 
-/* Tab 內容區 */
+/* === Tab 內容區 === */
 .cefr-content {
   display: none;
-  padding: 1rem 0;
+  padding: 1.25rem 0 0.5rem;
 }
 
 .cefr-content.active {
   display: block;
 }
 
+/* CEFR 區域標題層次 */
+.cefr-content h3 {
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+.cefr-content h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--primary);
+}
+
+/* 第一個 h4 緊跟 h3 時，不需要太大上邊距 */
+.cefr-content h3 + h4 {
+  margin-top: 0.75rem;
+}
+
 /* CEFR 等級標題色彩 */
 .cefr-content[data-level="A1"] h3 {
   border-left: 4px solid #4caf50;
-  padding-left: 0.5rem;
+  padding-left: 0.75rem;
 }
 
 .cefr-content[data-level="A2"] h3 {
   border-left: 4px solid #ff9800;
-  padding-left: 0.5rem;
+  padding-left: 0.75rem;
 }
 
 .cefr-content[data-level="B1"] h3 {
   border-left: 4px solid #f44336;
-  padding-left: 0.5rem;
+  padding-left: 0.75rem;
 }
 
-/* === 折疊區塊（文法解說） === */
-details {
-  margin: 0.75rem 0;
-  padding: 0.75rem;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  background: var(--code-bg);
+/* === 摘要區 === */
+.cefr-content[data-level="summary"] {
+  font-size: 0.9375rem;
+  line-height: 1.85;
 }
 
-details summary {
-  cursor: pointer;
-  font-size: 0.95rem;
+.cefr-content[data-level="summary"] p {
+  margin-bottom: 1rem;
 }
 
-details[open] summary {
-  margin-bottom: 0.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--border);
+.cefr-content[data-level="summary"] h4 {
+  margin-top: 1.5rem;
 }
 
-/* === 單字表格 === */
+/* 摘要總覽表格 — 緊湊精簡 */
+.cefr-content[data-level="summary"] table {
+  max-width: 400px;
+  font-size: 0.875rem;
+}
+
+/* === 表格通用 === */
 table {
   border-collapse: collapse;
   width: 100%;
+  font-size: 0.875rem;
+  line-height: 1.55;
 }
 
 table th,
 table td {
-  padding: 0.4rem 0.6rem;
+  padding: 0.5rem 0.75rem;
   border: 1px solid var(--border);
   text-align: left;
+  vertical-align: top;
 }
 
 table th {
   background: var(--code-bg);
   font-weight: 600;
+  font-size: 0.8125rem;
+  white-space: nowrap;
 }
 
-/* === 句型列表 === */
+/* 表格斑馬紋 */
+table tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--code-bg) 50%, transparent);
+}
+
+/* === 單字表格優化 === */
+/* 橫滾容器 — 讓寬表格在手機上可滑動 */
+.cefr-content {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 單字欄 — 粗體不換行 */
+.cefr-content table td:first-child {
+  white-space: nowrap;
+}
+
+/* 詞性欄 — 縮小、灰色 */
+.cefr-content table td:nth-child(2) {
+  white-space: nowrap;
+  color: var(--secondary);
+  font-size: 0.8125rem;
+}
+
+/* 中文欄 — 不換行 */
+.cefr-content table td:nth-child(3) {
+  white-space: nowrap;
+}
+
+/* 🔊 欄 */
+.cefr-content table td:last-child {
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* === 逐字稿表格 === */
+.transcript-table {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.transcript-table table {
+  font-size: 0.875rem;
+}
+
+.transcript-table td:first-child {
+  width: 55px;
+  white-space: nowrap;
+  vertical-align: top;
+}
+
+/* === 時間戳連結 === */
+.ts-link {
+  color: var(--primary);
+  cursor: pointer;
+  font-family: "SF Mono", "Fira Code", "Consolas", monospace;
+  font-size: 0.8125rem;
+  white-space: nowrap;
+}
+
+.ts-link:hover {
+  text-decoration: underline;
+}
+
+/* === 折疊區塊（文法解說） === */
+details {
+  margin: 0.75rem 0;
+  padding: 1rem 1.125rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--code-bg);
+}
+
+details summary {
+  cursor: pointer;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+details[open] summary {
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.625rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* 文法區塊 blockquote */
+details blockquote {
+  margin: 0.75rem 0;
+  padding: 0.75rem 1rem;
+  border-left: 3px solid var(--primary);
+  border-radius: 0 4px 4px 0;
+  font-size: 0.9375rem;
+  line-height: 1.75;
+}
+
+details blockquote p {
+  margin: 0.25rem 0;
+}
+
+/* 文法解說文字 */
+details > p {
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: var(--secondary);
+}
+
+/* === 句型列表 — 卡片風格 === */
+.cefr-content > ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.cefr-content > ul > li {
+  margin-bottom: 1rem;
+  padding: 1rem 1.125rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--code-bg);
+}
+
+.cefr-content > ul > li > strong,
 .post-content ul li strong {
   color: var(--primary);
+  font-size: 0.9375rem;
+}
+
+/* 句型子列表（🇩🇪/🇹🇼/💡） */
+.cefr-content > ul > li > ul {
+  margin-top: 0.625rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.cefr-content > ul > li > ul > li {
+  font-size: 0.875rem;
+  line-height: 1.75;
+  margin-bottom: 0.125rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+/* === 頁尾來源 === */
+.post-content > hr {
+  margin: 2rem 0 1rem;
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+.post-content > p > em {
+  font-size: 0.8125rem;
+  color: var(--secondary);
+}
+
+/* ========================================
+   手機版 (≤768px)
+   ======================================== */
+@media (max-width: 768px) {
+  /* 字幕列 */
+  .subtitle-bar {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+    gap: 0.5rem;
+    min-height: 2.5rem;
+  }
+  .subtitle-bar.sticky {
+    padding: 0.4rem 0.75rem;
+  }
+  .subtitle-zh-line {
+    font-size: 0.9em;
+  }
+
+  /* Tab 按鈕 — 縮小間距，可橫滾 */
+  .cefr-tabs {
+    gap: 0;
+    margin-top: 1.25rem;
+  }
+  .cefr-tab {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.8rem;
+    border-radius: 4px 4px 0 0;
+  }
+
+  /* 表格 — 設定最小寬度以啟動橫滾 */
+  .cefr-content table {
+    min-width: 580px;
+  }
+
+  .transcript-table table {
+    min-width: 520px;
+  }
+
+  .cefr-content[data-level="summary"] table {
+    min-width: unset;
+    max-width: 100%;
+  }
+
+  table {
+    font-size: 0.8125rem;
+  }
+
+  table th,
+  table td {
+    padding: 0.375rem 0.5rem;
+  }
+
+  /* CEFR 標題 */
+  .cefr-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  .cefr-content h4 {
+    font-size: 0.9375rem;
+    margin-top: 1.5rem;
+  }
+
+  /* 文法折疊 */
+  details {
+    padding: 0.75rem 0.875rem;
+    border-radius: 6px;
+  }
+  details summary {
+    font-size: 0.875rem;
+  }
+  details blockquote {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+    margin: 0.5rem 0;
+  }
+  details > p {
+    font-size: 0.8125rem;
+  }
+
+  /* 句型卡片 */
+  .cefr-content > ul > li {
+    padding: 0.75rem 0.875rem;
+    margin-bottom: 0.75rem;
+    border-radius: 6px;
+  }
+  .cefr-content > ul > li > strong {
+    font-size: 0.875rem;
+  }
+  .cefr-content > ul > li > ul > li {
+    font-size: 0.8125rem;
+    line-height: 1.7;
+  }
+
+  /* 摘要 */
+  .cefr-content[data-level="summary"] {
+    font-size: 0.875rem;
+    line-height: 1.8;
+  }
+
+  /* 播放器 */
+  .media-player {
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+  }
+  .player-toggle {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8125rem;
+  }
 }
