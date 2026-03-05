@@ -1,0 +1,29 @@
+services:
+  pipeline:
+    build:
+      context: ../workers
+    env_file: .env
+    environment:
+      - HUGO_SITE_DIR=/app/output/site
+      - SSH_KEY_PATH=/root/.ssh/deploy_key
+      - OUTPUT_DIR=/app/output
+    volumes:
+      - pipeline-output:/app/output
+      - ./ssh-keys:/root/.ssh:ro
+    restart: "no"
+
+  scheduler:
+    image: mcuadros/ofelia:latest
+    depends_on:
+      - pipeline
+    command: daemon --docker
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    labels:
+      # UTC 19:30 = CET 20:30 = 台灣 03:30
+      ofelia.job-run.tagesschau.schedule: "0 30 19 * * *"
+      ofelia.job-run.tagesschau.container: "pipeline"
+    restart: unless-stopped
+
+volumes:
+  pipeline-output:

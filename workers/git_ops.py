@@ -1,6 +1,7 @@
 """Git 操作：clone/pull Hugo site repo，寫入文章後 push。"""
 
 import logging
+import os
 import subprocess
 from pathlib import Path
 
@@ -13,9 +14,8 @@ def run_git(*args: str, cwd: Path | None = None) -> str:
     """執行 git 指令，回傳 stdout。"""
     env = None
     if config.SSH_KEY_PATH:
-        env = {
-            "GIT_SSH_COMMAND": f"ssh -i {config.SSH_KEY_PATH} -o StrictHostKeyChecking=no"
-        }
+        # 合併系統環境變數，否則 Docker 容器內會丟失 PATH 導致找不到 ssh
+        env = {**os.environ, "GIT_SSH_COMMAND": f"ssh -i {config.SSH_KEY_PATH} -o StrictHostKeyChecking=no"}
 
     cmd = ["git"] + list(args)
     logger.info(f"執行：{' '.join(cmd)}")
