@@ -50,7 +50,15 @@ summary: "Fünfter Tag im Nahost-Krieg: Angriffe gehen weiter、Aktuelle Stunde 
 ]
 </script>
 
-## 📝 逐字稿 Transkript
+<div class="cefr-tabs">
+  <button class="cefr-tab active" data-level="transcript">📝 逐字稿</button>
+  <button class="cefr-tab" data-level="summary">📋 摘要</button>
+  <button class="cefr-tab" data-level="A1">🟢 A1</button>
+  <button class="cefr-tab" data-level="A2">🟡 A2</button>
+  <button class="cefr-tab" data-level="B1">🔴 B1</button>
+</div>
+
+<div class="cefr-content active" data-level="transcript">
 
 <div class="transcript-table">
 
@@ -83,14 +91,9 @@ summary: "Fünfter Tag im Nahost-Krieg: Angriffe gehen weiter、Aktuelle Stunde 
 
 </div>
 
-<div class="cefr-tabs">
-  <button class="cefr-tab active" data-level="summary">📋 全文摘要</button>
-  <button class="cefr-tab" data-level="A1">🟢 A1 初學</button>
-  <button class="cefr-tab" data-level="A2">🟡 A2 初級</button>
-  <button class="cefr-tab" data-level="B1">🔴 B1 中級</button>
 </div>
 
-<div class="cefr-content active" data-level="summary">
+<div class="cefr-content" data-level="summary">
 
 ### 📋 本集摘要 Zusammenfassung
 
@@ -121,13 +124,13 @@ summary: "Fünfter Tag im Nahost-Krieg: Angriffe gehen weiter、Aktuelle Stunde 
 
 #### 📖 單字 Wortschatz
 
-| 單字 | 詞性/冠詞 | 中文 | 例句 | 例句翻譯 |
-|:-----|:----------|:-----|:-----|:---------|
-| **Abend** | der | 晚上/傍晚 | Einen schönen guten Abend. | 祝大家晚上好。 |
-| **Morgen** | der | 明天/早晨 | Und nun die Wettervorhersage für morgen, Donnerstag, den 5. März. | 現在是明天下雨的預測，週四，3 月 5 日。 |
-| **Krieg** | der | 戰爭 | Tag 5 im Nahostkrieg. | 中東戰爭第 5 天。 |
-| **Mond** | der | 月亮 | und die Mond und Sterne kaum trüben. | 月亮和星星幾乎不會被遮蔽。 |
-| **Sonne** | die | 太陽 | erwartet uns aber wieder viel Sonnenschein. | 但我們又會期待到很多陽光。 |
+| 單字 | 詞性 | 中文 | 例句 | 翻譯 | 🔊 |
+|:-----|:-----|:-----|:-----|:-----|:---:|
+| **Abend** | der | 晚上/傍晚 | Einen schönen guten Abend. | 祝大家晚上好。 | <span class="ts-link" data-time="00:18">00:18</span> |
+| **Krieg** | der | 戰爭 | Tag 5 im Nahostkrieg. | 中東戰爭第 5 天。 | <span class="ts-link" data-time="00:22">00:22</span> |
+| **Morgen** | der | 明天/早晨 | Und nun die Wettervorhersage für morgen, Donnerstag, den 5. März. | 現在是明天下雨的預測，週四，3 月 5 日。 |  |
+| **Mond** | der | 月亮 | und die Mond und Sterne kaum trüben. | 月亮和星星幾乎不會被遮蔽。 |  |
+| **Sonne** | die | 太陽 | erwartet uns aber wieder viel Sonnenschein. | 但我們又會期待到很多陽光。 |  |
 
 #### 📝 文法 Grammatik
 
@@ -143,7 +146,7 @@ A1 級基礎句型，使用疑問詞 Was 開頭，動詞第二位，主語在後
 </details>
 
 <details>
-<summary><strong>sein/haben (現在式)</strong></summary>
+<summary><strong>sein/haben (現在式)</strong> <span class="ts-link" data-time="00:19">🔊 00:19</span></summary>
 
 > **德文**：Ich begrüße Sie zur Tagesschau.
 >
@@ -155,12 +158,12 @@ A1 級基礎句型，使用疑問詞 Was 開頭，動詞第二位，主語在後
 
 #### 💬 句型 Satzmuster
 
-- **Subjekt + Verb + Objekt (SVO)**
+- **Subjekt + Verb + Objekt (SVO)** <span class="ts-link" data-time="00:24">🔊 00:24</span>
   - 🇩🇪 Das iranische Militär hat eine neue Angriffswelle gegen Israel gestartet.
   - 🇹🇼 伊朗軍隊對以色列發動了新一波攻擊。
-  - 💡 標準的德語陳述句結構，主詞在前，動詞在第二位置（這裡是現在完成時，但核心結構仍為 SVO）。
+  - 💡 標準的德語陳述句結構，主詞在前，動詞在第二位置。
 
-- **Zeit + Ort + Subjekt (時間地點狀語前置)**
+- **Zeit + Ort + Subjekt (時間地點狀語前置)** <span class="ts-link" data-time="00:15">🔊 00:15</span>
   - 🇩🇪 Heute im Studio Susanne Daubner.
   - 🇹🇼 今天在工作室，蘇珊娜·道布納爾。
   - 💡 新聞開場常見結構，先交代時間和地點，再引出人物或主題。
@@ -173,19 +176,19 @@ A1 級基礎句型，使用疑問詞 Was 開頭，動詞第二位，主語在後
 
 #### 📖 單字 Wortschatz
 
-| 單字 | 詞性/冠詞 | 中文 | 例句 | 例句翻譯 |
-|:-----|:----------|:-----|:-----|:---------|
-| **Rakete** | die | 飛彈/火箭 | Zum ersten Mal haben NATO-Flugabwehrsysteme eine iranische Rakete abgefangen. | 北約防空系統首次攔截了一枚伊朗飛彈。 |
-| **Verletzte** | die (Plural) | 受傷者 | Libanesische Behörden melden bislang mehr als 70 Tote und mehr als 400 Verletzte durch die Angriffe. | 黎巴嫩當局報告說，襲擊已造成超過 70 人死亡和 400 多人受傷。 |
-| **Sicherheit** | die | 安全/保障 | Ich vermisse am meisten Sicherheit, unsere tägliche Routine, das normale Leben. | 我最想念的是安全感、我們每天的常規和正常的生活。 |
-| **Routine** | die | 常規/習慣 | Ich vermisse am meisten Sicherheit, unsere tägliche Routine, das normale Leben. | 我最想念的是安全感、我們每天的常規和正常的生活。 |
-| **Bündnismitglied** | das | 聯盟成員 | Die NATO in Aufruhr, die Türkei ein Bündnismitglied, in dem auch US-Luftstreitkräfte stationiert sind. | 北約陷入動盪，土耳其作為一個聯盟成員，駐有美國空軍部隊。 |
-| **Krankenhäuser** | die (Plural) | 醫院 | 32 Menschen wurden in Krankenhäuser gebracht. | 32 人被送往醫院。 |
+| 單字 | 詞性 | 中文 | 例句 | 翻譯 | 🔊 |
+|:-----|:-----|:-----|:-----|:-----|:---:|
+| **Rakete** | die | 飛彈/火箭 | Zum ersten Mal haben NATO-Flugabwehrsysteme eine iranische Rakete abgefangen. | 北約防空系統首次攔截了一枚伊朗飛彈。 | <span class="ts-link" data-time="00:39">00:39</span> |
+| **Verletzte** | die (Pl.) | 受傷者 | Libanesische Behörden melden bislang mehr als 70 Tote und mehr als 400 Verletzte durch die Angriffe. | 黎巴嫩當局報告襲擊已造成超過 70 人死亡和 400 多人受傷。 |  |
+| **Sicherheit** | die | 安全/保障 | Ich vermisse am meisten Sicherheit, unsere tägliche Routine, das normale Leben. | 我最想念的是安全感、我們每天的常規和正常的生活。 |  |
+| **Routine** | die | 常規/習慣 | Ich vermisse am meisten Sicherheit, unsere tägliche Routine, das normale Leben. | 我最想念的是安全感、我們每天的常規和正常的生活。 |  |
+| **Bündnismitglied** | das | 聯盟成員 | Die NATO in Aufruhr, die Türkei ein Bündnismitglied. | 北約陷入動盪，土耳其作為一個聯盟成員。 | <span class="ts-link" data-time="00:55">00:55</span> |
+| **Krankenhäuser** | die (Pl.) | 醫院 | 32 Menschen wurden in Krankenhäuser gebracht. | 32 人被送往醫院。 | <span class="ts-link" data-time="01:32">01:32</span> |
 
 #### 📝 文法 Grammatik
 
 <details>
-<summary><strong>Perfekt (現在完成時)</strong></summary>
+<summary><strong>Perfekt (現在完成時)</strong> <span class="ts-link" data-time="00:39">🔊 00:39</span></summary>
 
 > **德文**：Zum ersten Mal haben NATO-Flugabwehrsysteme eine iranische Rakete abgefangen.
 >
@@ -196,18 +199,18 @@ A1 級基礎句型，使用疑問詞 Was 開頭，動詞第二位，主語在後
 </details>
 
 <details>
-<summary><strong>dass-Satz (關係子句)</strong></summary>
+<summary><strong>dass-Satz (關係子句)</strong> <span class="ts-link" data-time="01:01">🔊 01:01</span></summary>
 
 > **德文**：Also aus dem türkischen Verteidigungsministerium hieß es, dass diese Rakete noch über irakischen Luftraum...
 >
 > **中文**：因此，土耳其國防部表示，該飛彈曾飛越伊拉克領空……
 
-使用連接詞 dass 引導陳述子句，動詞位於句末 (gewesen)，這是 A2 重要的從句結構。
+使用連接詞 dass 引導陳述子句，動詞位於句末，這是 A2 重要的從句結構。
 
 </details>
 
 <details>
-<summary><strong>Passiv mit werden (被動語態)</strong></summary>
+<summary><strong>Passiv mit werden (被動語態)</strong> <span class="ts-link" data-time="01:32">🔊 01:32</span></summary>
 
 > **德文**：32 Menschen wurden in Krankenhäuser gebracht.
 >
@@ -219,7 +222,7 @@ A1 級基礎句型，使用疑問詞 Was 開頭，動詞第二位，主語在後
 
 #### 💬 句型 Satzmuster
 
-- **Subjekt + werden + Partizip II (被動結構)**
+- **Subjekt + werden + Partizip II (被動結構)** <span class="ts-link" data-time="01:32">🔊 01:32</span>
   - 🇩🇪 32 Menschen wurden in Krankenhäuser gebracht.
   - 🇹🇼 32 人被送往醫院。
   - 💡 A2 級常見的被動句型，用於新聞報導中客觀描述事件結果。
@@ -227,7 +230,7 @@ A1 級基礎句型，使用疑問詞 Was 開頭，動詞第二位，主語在後
 - **Verben mit Dativ (與第三格搭配的動詞)**
   - 🇩🇪 Ich vermisse am meisten Sicherheit.
   - 🇹🇼 我最想念的是安全感。
-  - 💡 vermissen 在此處接第四格，但許多 A2 動詞如 helfen, danken 等接第三格，此處展示名詞第四格用法，若需 Dativ 例子可換為：Man hilft den Verletzten (有人幫助受傷者)。
+  - 💡 vermissen 接第四格，許多 A2 動詞如 helfen, danken 等接第三格。
 
 </div>
 
@@ -237,14 +240,14 @@ A1 級基礎句型，使用疑問詞 Was 開頭，動詞第二位，主語在後
 
 #### 📖 單字 Wortschatz
 
-| 單字 | 詞性/冠詞 | 中文 | 例句 | 例句翻譯 |
-|:-----|:----------|:-----|:-----|:---------|
-| **Desaster** | das | 災難/浩劫 | um dieses wirtschaftliche Desaster bald zu beenden. | 以儘快結束這場經濟浩劫。 |
-| **Bürokratie** | die | 官僚主義/繁文縟節 | Die befürchten, dass das komplexe Regelwerk viel neue Bürokratie schafft. | 他們擔心複雜的規則會帶來大量新的官僚主義。 |
-| **Extremisten** | die | 極端分子 | Die neue Koalition sieht die größte Aufgabe darin, Demokratie und Freiheit gegen Extremisten zu schützen. | 新聯盟認為最大的任務是保護民主和自由免受極端分子的威脅。 |
-| **Verhaltenskodex** | der | 行為準則 | und es wird ein Verhaltenskodex bei der Berlinale eingeführt. | 並且將在柏林影展引入一個行為準則。 |
-| **Koalitionsvertrag** | der | 聯合政府協議 | hat das neue Regierungsbündnis aus SPD und CDU heute seinen Koalitionsvertrag vorgestellt. | 今天，由社民黨和基民盟組成的新執政聯盟提出了他們的聯合政府協議。 |
-| **Strategische Unabhängigkeit** | die | 戰略獨立性 | keine Klimatransformation und auch keine strategische Unabhängigkeit. | 沒有氣候轉型，也沒有戰略獨立性。 |
+| 單字 | 詞性 | 中文 | 例句 | 翻譯 | 🔊 |
+|:-----|:-----|:-----|:-----|:-----|:---:|
+| **Desaster** | das | 災難/浩劫 | um dieses wirtschaftliche Desaster bald zu beenden. | 以儘快結束這場經濟浩劫。 |  |
+| **Bürokratie** | die | 官僚主義 | Die befürchten, dass das komplexe Regelwerk viel neue Bürokratie schafft. | 他們擔心複雜的規則會帶來大量新的官僚主義。 |  |
+| **Extremisten** | die | 極端分子 | Demokratie und Freiheit gegen Extremisten zu schützen. | 保護民主和自由免受極端分子的威脅。 |  |
+| **Verhaltenskodex** | der | 行為準則 | es wird ein Verhaltenskodex bei der Berlinale eingeführt. | 將在柏林影展引入一個行為準則。 |  |
+| **Koalitionsvertrag** | der | 聯合政府協議 | hat das neue Regierungsbündnis heute seinen Koalitionsvertrag vorgestellt. | 今天新執政聯盟提出了他們的聯合政府協議。 |  |
+| **Strategische Unabhängigkeit** | die | 戰略獨立性 | keine Klimatransformation und auch keine strategische Unabhängigkeit. | 沒有氣候轉型，也沒有戰略獨立性。 |  |
 
 #### 📝 文法 Grammatik
 
@@ -255,29 +258,29 @@ A1 級基礎句型，使用疑問詞 Was 開頭，動詞第二位，主語在後
 >
 > **中文**：但是，對於「戰後」的計劃，迄今為止沒有人有。
 
-雖然此句為直陳語氣，但 B1 級常涉及虛擬式表達願望或假設（如：wäre, hätte）。新聞中常用虛擬式表達不確定性，例如：Es wäre besser, wenn... (如果...會更好)。
+B1 級常涉及虛擬式表達願望或假設（如：wäre, hätte）。新聞中常用虛擬式表達不確定性。
 
 </details>
 
 <details>
 <summary><strong>zu + Infinitiv (不定詞結構)</strong></summary>
 
-> **德文**：Deutschland werde sich nicht an diesem Krieg beteiligen.
+> **德文**：um für niedrigere Spritpreise zu sorgen.
 >
-> **中文**：德國不會參與這場戰爭。
+> **中文**：為了確保更低的汽油價格。
 
-此處為直陳式，但 B1 級重點在於理解 zu + Infinitiv 結構，例如：um für niedrigere Spritpreise zu sorgen (為了確保更低的汽油價格)。
+B1 級重點在於理解 zu + Infinitiv 結構，表達目的時使用 um...zu...。
 
 </details>
 
 <details>
-<summary><strong>Indirekte Rede (間接引語)</strong></summary>
+<summary><strong>Indirekte Rede (間接引語)</strong> <span class="ts-link" data-time="01:01">🔊 01:01</span></summary>
 
 > **德文**：Aus dem türkischen Außenministerium hieß es zunächst, die Rakete sollte Zypern treffen...
 >
 > **中文**：土耳其外交部最初表示，飛彈本應擊中塞浦路斯……
 
-將直接引語轉化為間接引語，使用 dass 或從句結構，動詞時態通常會回退（Sequence of Tenses）。
+將直接引語轉化為間接引語，使用 dass 或從句結構。
 
 </details>
 
@@ -293,10 +296,10 @@ A1 級基礎句型，使用疑問詞 Was 開頭，動詞第二位，主語在後
   - 🇹🇼 他們擔心複雜的規則會帶來大量新的官僚主義。
   - 💡 表達擔憂、希望或假設，動詞位於句末，是 B1 級閱讀新聞的關鍵結構。
 
-- **Präposition + Genitiv (所有格介詞)**
-  - 🇩🇪 wegen der durch den Krieg gestiegenen Preise.
-  - 🇹🇼 由於戰爭導致價格上漲。
-  - 💡 wegen 接第三格（Dativ），但在複雜名詞短語中常涉及 Genitiv 概念，此處展示介詞引導原因狀語的用法。
+- **Präposition + Genitiv (所有格介詞)** <span class="ts-link" data-time="01:42">🔊 01:42</span>
+  - 🇩🇪 die erste Versenkung eines feindlichen Schiffes durch ein Torpedo seit dem Zweiten Weltkrieg.
+  - 🇹🇼 自第二次世界大戰以來首次以魚雷擊沉敵方艦艇。
+  - 💡 wegen, während, trotz 等介詞接第二格（Genitiv），此處展示 Genitiv 名詞修飾結構。
 
 </div>
 

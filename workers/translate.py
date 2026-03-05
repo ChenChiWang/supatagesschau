@@ -80,7 +80,7 @@ def translate_batch(segments: list[dict]) -> list[dict]:
     return translated
 
 
-def analyze_cefr(full_transcript: str) -> dict:
+def analyze_cefr(timestamped_transcript: str) -> dict:
     """分析全文，按 CEFR 等級提取學習內容。"""
     prompt = f"""你是專業的德語教學專家。請分析以下德語新聞逐字稿，按 CEFR 等級提取學習內容。
 
@@ -99,26 +99,27 @@ def analyze_cefr(full_transcript: str) -> dict:
 - 所有例句必須來自逐字稿原文
 - 如果某等級找不到好例子，寧可少放也不要硬湊
 - 名詞務必標注性別（der/die/das）
+- 每個例句必須附上對應的時間戳（time 欄位，格式 MM:SS），從逐字稿的時間標記中取得
 
 請只輸出 JSON，格式如下：
 {{
   "A1": {{
     "vocabulary": [
-      {{"word": "德文單字", "article": "der/die/das（名詞才需要）", "meaning": "中文意思", "example": "逐字稿中的例句", "example_zh": "例句翻譯"}}
+      {{"word": "德文單字", "article": "der/die/das（名詞才需要）", "meaning": "中文意思", "example": "逐字稿中的例句", "example_zh": "例句翻譯", "time": "MM:SS"}}
     ],
     "grammar": [
-      {{"rule": "文法規則名稱（德文＋中文）", "german": "逐字稿中的例句", "chinese": "中文翻譯", "explanation": "詳細解說（繁體中文）"}}
+      {{"rule": "文法規則名稱（德文＋中文）", "german": "逐字稿中的例句", "chinese": "中文翻譯", "explanation": "詳細解說（繁體中文）", "time": "MM:SS"}}
     ],
     "patterns": [
-      {{"pattern": "句型結構（如 Subjekt + Verb + Objekt）", "example": "逐字稿中的例句", "translation": "中文翻譯", "note": "使用情境說明"}}
+      {{"pattern": "句型結構（如 Subjekt + Verb + Objekt）", "example": "逐字稿中的例句", "translation": "中文翻譯", "note": "使用情境說明", "time": "MM:SS"}}
     ]
   }},
   "A2": {{ ... }},
   "B1": {{ ... }}
 }}
 
-德語新聞逐字稿：
-{full_transcript}"""
+德語新聞逐字稿（含時間戳）：
+{timestamped_transcript}"""
 
     result = call_ollama(prompt, temperature=0.2)
 
@@ -161,10 +162,12 @@ def translate_and_analyze(segments: list[dict]) -> dict:
         translated = translate_batch(batch)
         all_translated.extend(translated)
 
-    # 組合全文送 CEFR 分析
-    full_transcript = "\n".join(s["text"] for s in segments)
+    # 組合帶時間戳的全文送 CEFR 分析
+    timestamped_transcript = "\n".join(
+        f"[{s['start']}] {s['text']}" for s in segments
+    )
     logger.info("開始 CEFR 學習內容分析...")
-    levels = analyze_cefr(full_transcript)
+    levels = analyze_cefr(timestamped_transcript)
 
     return {
         "segments": all_translated,
