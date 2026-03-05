@@ -131,8 +131,13 @@ def fetch_podcast() -> dict:
     # 從 description 擷取主題列表（逗號分隔）
     desc = audio_ep["description"]
     topics = [t.strip() for t in desc.split(",") if t.strip()]
-    # 移除最後的「Das Wetter」和 Hinweis 開頭的項目
-    topics = [t for t in topics if not t.startswith("Hinweis") and not t.startswith("\n")]
+    # 移除「Das Wetter」、Hinweis、換行開頭的項目
+    topics = [
+        t for t in topics
+        if not t.startswith("Hinweis")
+        and not t.startswith("\n")
+        and not t.startswith("Das Wetter")
+    ]
 
     return {
         "title": audio_ep["title"],
