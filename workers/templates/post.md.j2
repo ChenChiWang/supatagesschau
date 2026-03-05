@@ -35,14 +35,36 @@ summary: "{{ topics[:3] | join('、') }}"
 
 {% if active_levels %}
 <div class="cefr-tabs">
+  <button class="cefr-tab active" data-level="summary">📋 全文摘要</button>
 {%- for level in active_levels %}
-  <button class="cefr-tab{% if loop.first %} active{% endif %}" data-level="{{ level }}">{% if level == "A1" %}🟢 A1 初學{% elif level == "A2" %}🟡 A2 初級{% elif level == "B1" %}🔴 B1 中級{% endif %}</button>
+  <button class="cefr-tab" data-level="{{ level }}">{% if level == "A1" %}🟢 A1 初學{% elif level == "A2" %}🟡 A2 初級{% elif level == "B1" %}🔴 B1 中級{% endif %}</button>
 {%- endfor %}
+</div>
+
+<div class="cefr-content active" data-level="summary">
+
+### 📋 本集摘要 Zusammenfassung
+
+**{{ title }}**
+
+本集主題：
+{% for topic in topics %}
+- {{ topic }}
+{%- endfor %}
+
+#### 📊 學習內容總覽
+
+| 等級 | 單字 | 文法 | 句型 |
+|:-----|:-----|:-----|:-----|
+{%- for level in active_levels %}
+| {% if level == "A1" %}🟢{% elif level == "A2" %}🟡{% elif level == "B1" %}🔴{% endif %} {{ level }} | {{ levels[level].vocabulary | length }} 個 | {{ levels[level].grammar | length }} 個 | {{ levels[level].patterns | length }} 個 |
+{%- endfor %}
+
 </div>
 {% endif %}
 
 {% if levels.get("A1") and (levels.A1.vocabulary or levels.A1.grammar or levels.A1.patterns) %}
-<div class="cefr-content{% if "A1" == active_levels[0] %} active{% endif %}" data-level="A1">
+<div class="cefr-content" data-level="A1">
 
 ### 🟢 A1 — 初學者區 Anfänger
 
@@ -89,7 +111,7 @@ summary: "{{ topics[:3] | join('、') }}"
 {% endif %}
 
 {% if levels.get("A2") and (levels.A2.vocabulary or levels.A2.grammar or levels.A2.patterns) %}
-<div class="cefr-content{% if "A2" == active_levels[0] %} active{% endif %}" data-level="A2">
+<div class="cefr-content" data-level="A2">
 
 ### 🟡 A2 — 初級區 Grundstufe
 
@@ -136,7 +158,7 @@ summary: "{{ topics[:3] | join('、') }}"
 {% endif %}
 
 {% if levels.get("B1") and (levels.B1.vocabulary or levels.B1.grammar or levels.B1.patterns) %}
-<div class="cefr-content{% if "B1" == active_levels[0] %} active{% endif %}" data-level="B1">
+<div class="cefr-content" data-level="B1">
 
 ### 🔴 B1 — 中級區 Mittelstufe
 

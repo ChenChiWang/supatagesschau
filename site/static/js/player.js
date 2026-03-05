@@ -106,12 +106,10 @@ function updateSubtitle(time) {
   if (idx >= 0 && idx < segments.length) {
     var seg = segments[idx];
     timeEl.textContent = seg.start;
-    deEl.textContent = seg.de;
-    zhEl.textContent = seg.zh;
+    deEl.innerHTML = seg.de + "<br><span class='subtitle-zh-line'>" + seg.zh + "</span>";
   } else {
     timeEl.textContent = "";
-    deEl.textContent = "";
-    zhEl.textContent = "";
+    deEl.innerHTML = "";
   }
 }
 

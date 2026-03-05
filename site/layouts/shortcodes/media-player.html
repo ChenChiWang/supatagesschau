@@ -10,7 +10,7 @@
 
   {{ with $video_url }}
   <div class="player-container" id="video-container">
-    <video id="video-player" controls preload="metadata" width="100%">
+    <video id="video-player" controls playsinline preload="metadata" width="100%">
       <source src="{{ . }}" type="video/mp4">
       瀏覽器不支援影片播放
     </video>
@@ -28,9 +28,6 @@
 
   <div class="subtitle-bar" id="subtitle-bar">
     <span class="subtitle-time" id="subtitle-time"></span>
-    <span class="subtitle-text">
-      <span class="subtitle-de" id="subtitle-de">點擊播放，字幕將即時顯示</span>
-      <span class="subtitle-zh" id="subtitle-zh"></span>
-    </span>
+    <span class="subtitle-de" id="subtitle-de">點擊播放，字幕將即時顯示</span>
   </div>
 </div>
