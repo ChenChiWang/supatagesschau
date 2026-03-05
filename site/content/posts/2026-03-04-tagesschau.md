@@ -36,15 +36,16 @@ summary: "Fünfter Tag im Nahost-Krieg: Angriffe gehen weiter、Aktuelle Stunde 
 <div class="cefr-content active" data-level="summary">
 
 
-- **Nahostkrieg & Iran-Israel-Konflikt**: Iran greift Israel mit Drohnen und Raketen an, NATO fängt Rakete ab, US-U-Boot versenkt iranisches Kriegsschiff.
-- **Libanon & Hezbollah**: Israel greift Ziele im Libanon an, Zehntausende Vertriebene, Menschen sind kriegsmüde.
-- **Deutsche Politik & Außenpolitik**: Deutschland beteiligt sich nicht am Krieg, Bundesregierung will Deeskalation, Kritik an Kanzler Merz wegen Trump-Besuchs.
-- **Energiepreise & Wirtschaft**: Öl- und Gasförderung in Golfregion gestört, Spritpreise steigen, EU plant "Made in Europe" für E-Autos.
-- **Inlandspolitik & Medienreform**: Brandenburg neue Koalition mit Sparkurs, ARD/ZDF schalten Sender ab und bündeln Angebote.
+- **中東戰爭升級**：伊朗對以色列發動新一輪攻擊，使用無人機和導彈，並擊沉一艘伊朗軍艦；土耳其境內發生導彈攔截事件，引發北約關注。
+- **德國政治立場**：德國政府確認不會參與中東戰爭，強調致力於降溫與遏制暴力擴散，但反對黨批評總理對美國總統特朗普的立場不夠堅定。
+- **能源危機與價格**：因中東衝突導致石油和天然氣出口受阻，德國燃油價格飆升，政府暫不干預市場，但各政黨就能源政策展開激烈辯論。
+- **歐盟「歐洲製造」提案**：歐盟委員會提出在公共採購中強制要求「歐洲製造」，以減少對中國依賴並保護本土產業，但引發關於定義模糊和官僚主義的爭議。
+- **德國國內政治動態**：勃蘭登堡州新聯合政府成立，承諾削減開支並保護民主；柏林電影節主席留任但將接受新監督機制。
+- **公共電視台改革**：ARD 與 ZDF 宣布合併部分頻道，關閉三個線性頻道，加強數位合作以應對未來挑戰。
 
 
 
-<p class="cefr-hint">📊 本集學習內容： 🟢 A1（5 單字 · 2 文法 · 2 句型） 🟡 A2（6 單字 · 3 文法 · 2 句型） 🔴 B1（6 單字 · 3 文法 · 2 句型） — 點擊上方分頁查看</p>
+<p class="cefr-hint">📊 本集學習內容： 🟢 A1（8 單字 · 4 文法 · 3 句型） 🟡 A2（10 單字 · 4 文法 · 4 句型） 🔴 B1（10 單字 · 4 文法 · 4 句型） — 點擊上方分頁查看</p>
 
 
 </div>
@@ -1233,19 +1234,19 @@ summary: "Fünfter Tag im Nahost-Krieg: Angriffe gehen weiter、Aktuelle Stunde 
 </div>
 <div class="vocab-example">
 <div class="vocab-de">Einen schönen guten Abend.</div>
-<div class="vocab-ex-zh">一個美好的晚上好。</div>
+<div class="vocab-ex-zh">美好的晚上好。</div>
 </div>
 </div>
 <div class="vocab-card">
 <div class="vocab-head">
 <span class="vocab-word">Land</span>
 <span class="vocab-pos">das</span>
-<span class="vocab-meaning">國家；土地</span>
+<span class="vocab-meaning">國家</span>
 <span class="ts-link" data-time="00:29">🔊 00:29</span>
 </div>
 <div class="vocab-example">
 <div class="vocab-de">Mit Drohnen zielt das Land auch wieder auf US-Einrichtungen.</div>
-<div class="vocab-ex-zh">該國也再次用無人機瞄準美國設施。</div>
+<div class="vocab-ex-zh">該國再次使用無人機瞄準美國設施。</div>
 </div>
 </div>
 <div class="vocab-card">
@@ -1269,7 +1270,7 @@ summary: "Fünfter Tag im Nahost-Krieg: Angriffe gehen weiter、Aktuelle Stunde 
 </div>
 <div class="vocab-example">
 <div class="vocab-de">Ein Kran zieht Raketentrümmer im Süden der Türkei aus dem Wasser.</div>
-<div class="vocab-ex-zh">一台起重機從土耳其南部的海水中撈起火箭殘骸。</div>
+<div class="vocab-ex-zh">一台起重機從土耳其南部的海水中撈起導彈殘骸。</div>
 </div>
 </div>
 <div class="vocab-card">
@@ -1281,7 +1282,43 @@ summary: "Fünfter Tag im Nahost-Krieg: Angriffe gehen weiter、Aktuelle Stunde 
 </div>
 <div class="vocab-example">
 <div class="vocab-de">Aus Schulen sind Notunterkünfte geworden.</div>
-<div class="vocab-ex-zh">學校變成了臨時收容所。</div>
+<div class="vocab-ex-zh">學校變成了臨時避難所。</div>
+</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-head">
+<span class="vocab-word">Haus</span>
+<span class="vocab-pos">das</span>
+<span class="vocab-meaning">房子</span>
+<span class="ts-link" data-time="02:50">🔊 02:50</span>
+</div>
+<div class="vocab-example">
+<div class="vocab-de">Die israelische Armee ruft 250.000 Menschen auf, ihre Häuser zu verlassen.</div>
+<div class="vocab-ex-zh">以色列軍隊呼籲 25 萬人離開家園。</div>
+</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-head">
+<span class="vocab-word">Polizei</span>
+<span class="vocab-pos">die</span>
+<span class="vocab-meaning">警察</span>
+<span class="ts-link" data-time="04:24">🔊 04:24</span>
+</div>
+<div class="vocab-example">
+<div class="vocab-de">Vor US-amerikanischen, israelischen und jüdischen Einrichtungen sei jetzt aber mehr Polizei im Einsatz.</div>
+<div class="vocab-ex-zh">但在美國、以色列和猶太設施前，現在部署了更多警察。</div>
+</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-head">
+<span class="vocab-word">Welt</span>
+<span class="vocab-pos">die</span>
+<span class="vocab-meaning">世界</span>
+<span class="ts-link" data-time="05:48">🔊 05:48</span>
+</div>
+<div class="vocab-example">
+<div class="vocab-de">der die Welt in Flammen sehen will.</div>
+<div class="vocab-ex-zh">那個希望看到世界陷入火海的人。</div>
 </div>
 </div>
 </div>
@@ -1292,25 +1329,49 @@ summary: "Fünfter Tag im Nahost-Krieg: Angriffe gehen weiter、Aktuelle Stunde 
 
 
 <details>
-<summary><strong>現在式 (Präsens) 描述當前事實或習慣</strong> <span class="ts-link" data-time="00:15">🔊 00:15</span></summary>
+<summary><strong>現在式 (Präsens) 描述事實與習慣</strong> <span class="ts-link" data-time="00:15">🔊 00:15</span></summary>
 
 > **德文**：Heute im Studio Susanne Daubner.
 >
 > **中文**：今天演播室裡是蘇珊娜·道布納。
 
-德語新聞常用現在式來報導正在發生的事件，這裡省略了動詞 "ist" (是)，直接以名詞片語開頭表示狀態。
+德語新聞常用現在式來描述當下發生的事件或狀態，即使是在報導過去發生的事（如「今天是第 5 天」），也常以現在式呈現即時感。
 
 </details>
 
 
 <details>
-<summary><strong>主詞 + 動詞 + 受詞 (SVO) 基本語序</strong> <span class="ts-link" data-time="01:13">🔊 01:13</span></summary>
+<summary><strong>主詞 + 動詞 (SVO) 基本語序</strong> <span class="ts-link" data-time="00:24">🔊 00:24</span></summary>
 
-> **德文**：Die USA geben an, bislang fast 2000 Ziele im Land getroffen zu haben.
+> **德文**：Das iranische Militär hat eine neue Angriffswelle gestartet.
 >
-> **中文**：美國表示，迄今為止已在該國擊中近 2000 個目標。
+> **中文**：伊朗軍隊發動了一波新的攻擊。
 
-這是標準的德語語序：主詞 (Die USA) + 動詞 (geben an) + 受詞內容 (dass... getroffen zu haben)。
+這是德語最基礎的語序：主詞 (Das iranische Militär) + 動詞 (hat ... gestartet)。在現在式中，動詞通常位於第二位。
+
+</details>
+
+
+<details>
+<summary><strong>W-Fragen (疑問句結構)</strong> <span class="ts-link" data-time="03:07">🔊 03:07</span></summary>
+
+> **德文**：Was wissen Sie über die abgefangene Rakete?
+>
+> **中文**：您對那枚被攔截的導彈知道些什麼？
+
+疑問詞 (Was) 位於句首，動詞 (wissen) 緊接其後，主詞 (Sie) 在動詞之後。這是德語疑問句的基本結構。
+
+</details>
+
+
+<details>
+<summary><strong>否定句 mit 'nicht'</strong> <span class="ts-link" data-time="05:23">🔊 05:23</span></summary>
+
+> **德文**：Deutschland wird sich an diesem Krieg nicht beteiligen.
+>
+> **中文**：德國不會參與這場戰爭。
+
+在現在式或未來式中，'nicht' 通常放在動詞短語之前來否定整個動作。這裡否定了 'sich beteiligen' (參與)。
 
 </details>
 
@@ -1322,26 +1383,39 @@ summary: "Fünfter Tag im Nahost-Krieg: Angriffe gehen weiter、Aktuelle Stunde 
 
 <div class="pattern-card">
 <div class="pattern-head">
-<strong>Einen ... Abend / Tag (時間問候語)</strong>
+<strong>Einen + Adjektiv + Nomen (致意/祝福)</strong>
 <span class="ts-link" data-time="00:18">🔊 00:18</span>
 </div>
 <div class="pattern-body">
 <div class="pattern-de">🇩🇪 Einen schönen guten Abend.</div>
-<div class="pattern-zh">🇹🇼 一個美好的晚上好。</div>
-<div class="pattern-note">💡 常用於新聞開場或正式場合的問候，省略了主詞 "Ich wünsche Ihnen"。</div>
+<div class="pattern-zh">🇹🇼 美好的晚上好。</div>
+<div class="pattern-note">💡 這是德語中非常常見的致意方式，字面意思是「一個美好的晚上」，用於打招呼或結束對話。</div>
 </div>
 </div>
 
 
 <div class="pattern-card">
 <div class="pattern-head">
-<strong>Hier ist ... (這裡是...)</strong>
-<span class="ts-link" data-time="00:04">🔊 00:04</span>
+<strong>jemanden auffordern, etwas zu tun (呼籲某人做某事)</strong>
+<span class="ts-link" data-time="02:50">🔊 02:50</span>
 </div>
 <div class="pattern-body">
-<div class="pattern-de">🇩🇪 Hier ist das Erste Deutsche Fernsehen mit der Tagesschau.</div>
-<div class="pattern-zh">🇹🇼 這裡是第一德國電視台與新聞雜誌節目。</div>
-<div class="pattern-note">💡 用於介紹節目或頻道，"ist" 後接主詞片語。</div>
+<div class="pattern-de">🇩🇪 Die Armee ruft Menschen auf, ihre Häuser zu verlassen.</div>
+<div class="pattern-zh">🇹🇼 軍隊呼籲人們離開家園。</div>
+<div class="pattern-note">💡 動詞 'aufrufen' 後接不定式結構 'zu + Infinitiv'，表示呼籲或要求某人執行某個動作。</div>
+</div>
+</div>
+
+
+<div class="pattern-card">
+<div class="pattern-head">
+<strong>etwas wird zu etwas (某事變成某事)</strong>
+<span class="ts-link" data-time="02:32">🔊 02:32</span>
+</div>
+<div class="pattern-body">
+<div class="pattern-de">🇩🇪 Aus Schulen sind Notunterkünfte geworden.</div>
+<div class="pattern-zh">🇹🇼 學校變成了臨時避難所。</div>
+<div class="pattern-note">💡 使用 'werden' 的完成式來描述狀態的轉變，表示原本的功能已改變為另一種用途。</div>
 </div>
 </div>
 
@@ -1365,42 +1439,42 @@ summary: "Fünfter Tag im Nahost-Krieg: Angriffe gehen weiter、Aktuelle Stunde 
 <div class="vocab-head">
 <span class="vocab-word">Angriffswelle</span>
 <span class="vocab-pos">die</span>
-<span class="vocab-meaning">攻擊浪潮</span>
+<span class="vocab-meaning">攻擊波次</span>
 <span class="ts-link" data-time="00:24">🔊 00:24</span>
 </div>
 <div class="vocab-example">
-<div class="vocab-de">Das iranische Militär hat eine neue Angriffswelle gegen Israel gestartet.</div>
-<div class="vocab-ex-zh">伊朗軍隊對以色列發動了新一波的攻擊。</div>
+<div class="vocab-de">Das iranische Militär hat eine neue Angriffswelle gestartet.</div>
+<div class="vocab-ex-zh">伊朗軍隊發動了一波新的攻擊。</div>
 </div>
 </div>
 <div class="vocab-card">
 <div class="vocab-head">
-<span class="vocab-word">Ziel</span>
+<span class="vocab-word">Abfangen</span>
 <span class="vocab-pos">das</span>
-<span class="vocab-meaning">目標</span>
-<span class="ts-link" data-time="01:13">🔊 01:13</span>
+<span class="vocab-meaning">攔截</span>
+<span class="ts-link" data-time="00:39">🔊 00:39</span>
 </div>
 <div class="vocab-example">
-<div class="vocab-de">Die USA geben an, bislang fast 2000 Ziele im Land getroffen zu haben.</div>
-<div class="vocab-ex-zh">美國表示，迄今為止已在該國擊中近 2000 個目標。</div>
+<div class="vocab-de">Zum ersten Mal haben NATO-Flugabwehrsysteme eine iranische Rakete abgefangen.</div>
+<div class="vocab-ex-zh">北約防空系統首次成功攔截了一枚伊朗導彈。</div>
 </div>
 </div>
 <div class="vocab-card">
 <div class="vocab-head">
-<span class="vocab-word">Kriegsschiff</span>
-<span class="vocab-pos">das</span>
-<span class="vocab-meaning">軍艦</span>
-<span class="ts-link" data-time="01:20">🔊 01:20</span>
+<span class="vocab-word">Türkei</span>
+<span class="vocab-pos">die</span>
+<span class="vocab-meaning">土耳其</span>
+<span class="ts-link" data-time="00:45">🔊 00:45</span>
 </div>
 <div class="vocab-example">
-<div class="vocab-de">Ein U-Boot der USA mit einem Torpedo ein iranisches Kriegsschiff versenkt.</div>
-<div class="vocab-ex-zh">一艘美國潛艇用魚雷擊沉了一艘伊朗軍艦。</div>
+<div class="vocab-de">Sie hatte sich der Türkei genähert.</div>
+<div class="vocab-ex-zh">它曾接近土耳其。</div>
 </div>
 </div>
 <div class="vocab-card">
 <div class="vocab-head">
 <span class="vocab-word">Vertriebene</span>
-<span class="vocab-pos">der/die (名詞化形容詞)</span>
+<span class="vocab-pos">der/die</span>
 <span class="vocab-meaning">流離失所者</span>
 <span class="ts-link" data-time="02:29">🔊 02:29</span>
 </div>
@@ -1411,14 +1485,14 @@ summary: "Fünfter Tag im Nahost-Krieg: Angriffe gehen weiter、Aktuelle Stunde 
 </div>
 <div class="vocab-card">
 <div class="vocab-head">
-<span class="vocab-word">Sicherheit</span>
-<span class="vocab-pos">die</span>
-<span class="vocab-meaning">安全</span>
-<span class="ts-link" data-time="02:37">🔊 02:37</span>
+<span class="vocab-word">Kriegsmüde</span>
+<span class="vocab-pos">der/die</span>
+<span class="vocab-meaning">厭戰的</span>
+<span class="ts-link" data-time="02:34">🔊 02:34</span>
 </div>
 <div class="vocab-example">
-<div class="vocab-de">Ich vermisse am meisten Sicherheit, unsere tägliche Routine.</div>
-<div class="vocab-ex-zh">我最想念的是安全，我們日常的常規。</div>
+<div class="vocab-de">Die Menschen sind kriegsmüde.</div>
+<div class="vocab-ex-zh">人們已經厭戰了。</div>
 </div>
 </div>
 <div class="vocab-card">
@@ -1429,8 +1503,56 @@ summary: "Fünfter Tag im Nahost-Krieg: Angriffe gehen weiter、Aktuelle Stunde 
 <span class="ts-link" data-time="00:55">🔊 00:55</span>
 </div>
 <div class="vocab-example">
-<div class="vocab-de">Die NATO in Aufruhr, die Türkei ein Bündnismitglied.</div>
-<div class="vocab-ex-zh">北約陷入動盪，土耳其是一個盟國成員。</div>
+<div class="vocab-de">Die Türkei ist ein Bündnismitglied.</div>
+<div class="vocab-ex-zh">土耳其是一個盟國成員。</div>
+</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-head">
+<span class="vocab-word">Torpedo</span>
+<span class="vocab-pos">der</span>
+<span class="vocab-meaning">魚雷</span>
+<span class="ts-link" data-time="01:20">🔊 01:20</span>
+</div>
+<div class="vocab-example">
+<div class="vocab-de">Ein U-Boot hat ein Kriegsschiff mit einem Torpedo versenkt.</div>
+<div class="vocab-ex-zh">一艘潛艇用魚雷擊沉了一艘軍艦。</div>
+</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-head">
+<span class="vocab-word">Rakete</span>
+<span class="vocab-pos">die</span>
+<span class="vocab-meaning">導彈</span>
+<span class="ts-link" data-time="01:01">🔊 01:01</span>
+</div>
+<div class="vocab-example">
+<div class="vocab-de">Die Rakete sollte Zypern treffen.</div>
+<div class="vocab-ex-zh">這枚導彈原本要擊中塞浦路斯。</div>
+</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-head">
+<span class="vocab-word">Trümmer</span>
+<span class="vocab-pos">die</span>
+<span class="vocab-meaning">殘骸</span>
+<span class="ts-link" data-time="00:51">🔊 00:51</span>
+</div>
+<div class="vocab-example">
+<div class="vocab-de">Ein Kran zieht Raketentrümmer aus dem Wasser.</div>
+<div class="vocab-ex-zh">起重機從水中撈起導彈殘骸。</div>
+</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-head">
+<span class="vocab-word">Gefährdungssituation</span>
+<span class="vocab-pos">die</span>
+<span class="vocab-meaning">危險狀況</span>
+<span class="ts-link" data-time="04:18">🔊 04:18</span>
+</div>
+<div class="vocab-example">
+<div class="vocab-de">Es gebe keine konkreten Gefährdungssituationen.</div>
+<div class="vocab-ex-zh">目前沒有具體的危險狀況。</div>
 </div>
 </div>
 </div>
@@ -1441,37 +1563,49 @@ summary: "Fünfter Tag im Nahost-Krieg: Angriffe gehen weiter、Aktuelle Stunde 
 
 
 <details>
-<summary><strong>Perfekt (完成式) 描述已發生的過去事件</strong> <span class="ts-link" data-time="00:24">🔊 00:24</span></summary>
+<summary><strong>Perfekt (完成式) 描述已發生的事件</strong> <span class="ts-link" data-time="00:24">🔊 00:24</span></summary>
 
-> **德文**：Das iranische Militär hat eine neue Angriffswelle gegen Israel gestartet.
+> **德文**：Das iranische Militär hat eine neue Angriffswelle gestartet.
 >
-> **中文**：伊朗軍隊已經對以色列發動了新一波的攻擊。
+> **中文**：伊朗軍隊已經發動了一波新的攻擊。
 
-動詞 "starten" 的完成式，由助動詞 "hat" + 分詞 "gestartet" 構成，用於描述新聞中已發生的動作。
+德語新聞常用完成式來敘述過去發生的具體事件。結構為 'haben/sein + Partizip II'，這裡使用 'hat ... gestartet'。
 
 </details>
 
 
 <details>
-<summary><strong>weil / dass 從句 (語序變化)</strong> <span class="ts-link" data-time="01:01">🔊 01:01</span></summary>
+<summary><strong>weil/dass 從句 (Nebensatz)</strong> <span class="ts-link" data-time="01:01">🔊 01:01</span></summary>
 
-> **德文**：Aus dem türkischen Außenministerium hieß es zunächst, die Rakete sollte Zypern treffen und sei vom Kurs abgekommen.
+> **德文**：Die Rakete sollte Zypern treffen und sei vom Kurs abgekommen.
 >
-> **中文**：土耳其外交部最初表示，該火箭本應擊中塞浦路斯，但偏離了航線。
+> **中文**：導彈原本要擊中塞浦路斯，但偏離了航線。
 
-間接引語中使用 "sei" (sein 的 Konjunktiv I) 和 "abgekommen"，動詞置於句末，這是德語新聞報導轉述他人言論的典型結構。
+間接引語中使用 'dass' 引導的從句結構（此處省略 dass），動詞位於句末或與主句動詞結合。這裡描述的是土耳其外交部長的話。
 
 </details>
 
 
 <details>
-<summary><strong>反身動詞 (sich fühlen / sich wähnen)</strong> <span class="ts-link" data-time="01:36">🔊 01:36</span></summary>
+<summary><strong>Dativ 介詞搭配 (mit + Dativ)</strong> <span class="ts-link" data-time="00:29">🔊 00:29</span></summary>
 
-> **德文**：Ein amerikanisches U-Boot versenkte ein iranisches Kriegsschiff, das sich in internationalen Gewässern in Sicherheit wähnte.
+> **德文**：Mit Drohnen zielt das Land auf US-Einrichtungen.
 >
-> **中文**：一艘美國潛艇擊沉了一艘伊朗軍艦，該軍艦當時自認為在國際水域是安全的。
+> **中文**：該國使用無人機瞄準美國設施。
 
-"sich in Sicherheit wähnen" 是反身動詞搭配，表示 "自以為安全"，這裡用過去式描述當時的狀態。
+介詞 'mit' 永遠支配 Dativ，表示「用...工具」。這裡 'Drohnen' (無人機) 是 Dativ 形式（複數無變化）。
+
+</details>
+
+
+<details>
+<summary><strong>反身動詞 (sich nähern / sich befinden)</strong> <span class="ts-link" data-time="00:45">🔊 00:45</span></summary>
+
+> **德文**：Sie hatte sich der Türkei genähert.
+>
+> **中文**：它曾接近土耳其。
+
+動詞 'nähern' 是反身動詞，需搭配反身代詞 'sich'。這裡使用過去完成式 'hatte ... genähert'，表示在過去某個時間點之前發生的動作。
 
 </details>
 
@@ -1483,26 +1617,52 @@ summary: "Fünfter Tag im Nahost-Krieg: Angriffe gehen weiter、Aktuelle Stunde 
 
 <div class="pattern-card">
 <div class="pattern-head">
-<strong>Nominativ + Präteritum (sein) + Adjektiv/Nomen (狀態描述)</strong>
-<span class="ts-link" data-time="02:34">🔊 02:34</span>
+<strong>etwas wird von jemandem getan (被動語態)</strong>
+<span class="ts-link" data-time="00:45">🔊 00:45</span>
 </div>
 <div class="pattern-body">
-<div class="pattern-de">🇩🇪 Die Menschen sind kriegsmüde.</div>
-<div class="pattern-zh">🇹🇼 人們對戰爭感到疲憊。</div>
-<div class="pattern-note">💡 使用 "sein" 的現在式搭配形容詞短語來描述群體狀態，常見於新聞評論或人物引語。</div>
+<div class="pattern-de">🇩🇪 Die Rakete wurde über dem östlichen Mittelmeer zerstört.</div>
+<div class="pattern-zh">🇹🇼 導彈在東地中海被摧毀。</div>
+<div class="pattern-note">💡 使用 'werden' + Partizip II 構成被動式，強調受事者（導彈）而非施事者。</div>
 </div>
 </div>
 
 
 <div class="pattern-card">
 <div class="pattern-head">
-<strong>Dativ + Präposition (in + Dativ) 表示地點</strong>
-<span class="ts-link" data-time="00:51">🔊 00:51</span>
+<strong>sich in Sicherheit wähnen (自以為安全)</strong>
+<span class="ts-link" data-time="01:36">🔊 01:36</span>
 </div>
 <div class="pattern-body">
-<div class="pattern-de">🇩🇪 Ein Kran zieht Raketentrümmer im Süden der Türkei aus dem Wasser.</div>
-<div class="pattern-zh">🇹🇼 一台起重機從土耳其南部的海水中撈起火箭殘骸。</div>
-<div class="pattern-note">💡 "im Süden" (in dem Süden) 是介詞 "in" 接 Dativ 表示靜止地點的用法，描述事件發生的位置。</div>
+<div class="pattern-de">🇩🇪 Das Schiff, das sich in internationalen Gewässern in Sicherheit wähnte.</div>
+<div class="pattern-zh">🇹🇼 那艘自以為在國際水域安全的軍艦。</div>
+<div class="pattern-note">💡 這是一個固定搭配，'wähnen' 表示「誤以為」或「自以為」，常帶有諷刺意味，指實際情況並非如此。</div>
+</div>
+</div>
+
+
+<div class="pattern-card">
+<div class="pattern-head">
+<strong>etwas ist etwas geworden (狀態轉變)</strong>
+<span class="ts-link" data-time="02:32">🔊 02:32</span>
+</div>
+<div class="pattern-body">
+<div class="pattern-de">🇩🇪 Aus Schulen sind Notunterkünfte geworden.</div>
+<div class="pattern-zh">🇹🇼 學校變成了臨時避難所。</div>
+<div class="pattern-note">💡 使用 'werden' 的完成式來描述功能或性質的根本改變，強調結果狀態。</div>
+</div>
+</div>
+
+
+<div class="pattern-card">
+<div class="pattern-head">
+<strong>etwas ist geschehen (被動/完成)</strong>
+<span class="ts-link" data-time="01:01">🔊 01:01</span>
+</div>
+<div class="pattern-body">
+<div class="pattern-de">🇩🇪 Die Rakete sollte Zypern treffen und sei vom Kurs abgekommen.</div>
+<div class="pattern-zh">🇹🇼 導彈原本要擊中塞浦路斯，但偏離了航線。</div>
+<div class="pattern-note">💡 這裡使用 'sein' 的完成式結構來描述事件結果，強調導彈偏離航線這一事實。</div>
 </div>
 </div>
 
@@ -1524,38 +1684,38 @@ summary: "Fünfter Tag im Nahost-Krieg: Angriffe gehen weiter、Aktuelle Stunde 
 <div class="vocab-list">
 <div class="vocab-card">
 <div class="vocab-head">
-<span class="vocab-word">Abfangen</span>
-<span class="vocab-pos">das</span>
-<span class="vocab-meaning">攔截</span>
-<span class="ts-link" data-time="00:39">🔊 00:39</span>
+<span class="vocab-word">Aufruhr</span>
+<span class="vocab-pos">der</span>
+<span class="vocab-meaning">動盪/騷亂</span>
+<span class="ts-link" data-time="00:55">🔊 00:55</span>
 </div>
 <div class="vocab-example">
-<div class="vocab-de">Zum ersten Mal haben NATO-Flugabwehrsysteme eine iranische Rakete abgefangen.</div>
-<div class="vocab-ex-zh">北約防空系統首次成功攔截了一枚伊朗火箭。</div>
+<div class="vocab-de">Die NATO in Aufruhr.</div>
+<div class="vocab-ex-zh">北約處於動盪之中。</div>
+</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-head">
+<span class="vocab-word">Irrläufer</span>
+<span class="vocab-pos">der</span>
+<span class="vocab-meaning">誤射的導彈/偏離航線的物體</span>
+<span class="ts-link" data-time="03:36">🔊 03:36</span>
+</div>
+<div class="vocab-example">
+<div class="vocab-de">Das sei ein Irrläufer gewesen.</div>
+<div class="vocab-ex-zh">那被說成是一枚誤射的導彈。</div>
 </div>
 </div>
 <div class="vocab-card">
 <div class="vocab-head">
 <span class="vocab-word">Deeskalation</span>
 <span class="vocab-pos">die</span>
-<span class="vocab-meaning">降溫；緩和</span>
+<span class="vocab-meaning">降溫/緩和</span>
 <span class="ts-link" data-time="05:33">🔊 05:33</span>
 </div>
 <div class="vocab-example">
-<div class="vocab-de">Deutschland wird alles daran setzen, zur Deeskalation beizutragen.</div>
-<div class="vocab-ex-zh">德國將盡一切努力為緩和局勢做出貢獻。</div>
-</div>
-</div>
-<div class="vocab-card">
-<div class="vocab-head">
-<span class="vocab-word">Völkerrecht</span>
-<span class="vocab-pos">das</span>
-<span class="vocab-meaning">國際法</span>
-<span class="ts-link" data-time="05:52">🔊 05:52</span>
-</div>
-<div class="vocab-example">
-<div class="vocab-de">Machen Sie mal den Rücken gerade, stehen Sie für das Völkerrecht ein.</div>
-<div class="vocab-ex-zh">請挺直腰桿，為國際法挺身而出。</div>
+<div class="vocab-de">Deutschland will zur Deeskalation beitragen.</div>
+<div class="vocab-ex-zh">德國致力於促進局勢降溫。</div>
 </div>
 </div>
 <div class="vocab-card">
@@ -1566,32 +1726,80 @@ summary: "Fünfter Tag im Nahost-Krieg: Angriffe gehen weiter、Aktuelle Stunde 
 <span class="ts-link" data-time="07:23">🔊 07:23</span>
 </div>
 <div class="vocab-example">
-<div class="vocab-de">Und Qatar erklärte die sogenannte Force Majeure, also höhere Gewalt.</div>
-<div class="vocab-ex-zh">卡塔爾宣佈了所謂的 "不可抗力"，即天災。</div>
-</div>
-</div>
-<div class="vocab-card">
-<div class="vocab-head">
-<span class="vocab-word">Abhängigkeit</span>
-<span class="vocab-pos">die</span>
-<span class="vocab-meaning">依賴性</span>
-<span class="ts-link" data-time="09:11">🔊 09:11</span>
-</div>
-<div class="vocab-example">
-<div class="vocab-de">Mehr Aufträge für heimische Batteriehersteller gleich weniger Abhängigkeit beispielsweise von China.</div>
-<div class="vocab-ex-zh">給本土電池製造商更多訂單，意味著對中國等國的依賴減少。</div>
+<div class="vocab-de">Qatar erklärte die sogenannte Force Majeure.</div>
+<div class="vocab-ex-zh">卡塔爾宣佈了所謂的不可抗力。</div>
 </div>
 </div>
 <div class="vocab-card">
 <div class="vocab-head">
 <span class="vocab-word">Bürokratie</span>
 <span class="vocab-pos">die</span>
-<span class="vocab-meaning">官僚主義；繁文縟節</span>
+<span class="vocab-meaning">官僚主義/繁文縟節</span>
 <span class="ts-link" data-time="10:42">🔊 10:42</span>
 </div>
 <div class="vocab-example">
-<div class="vocab-de">Die befürchten, dass das komplexe Regelwerk viel neue Bürokratie schafft.</div>
-<div class="vocab-ex-zh">他們擔心複雜的規則體系會產生大量新的官僚程序。</div>
+<div class="vocab-de">Das Regelwerk schafft viel neue Bürokratie.</div>
+<div class="vocab-ex-zh">該規則體系產生了大量新的官僚程序。</div>
+</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-head">
+<span class="vocab-word">Koalitionsvertrag</span>
+<span class="vocab-pos">der</span>
+<span class="vocab-meaning">聯合執政協議</span>
+<span class="ts-link" data-time="10:48">🔊 10:48</span>
+</div>
+<div class="vocab-example">
+<div class="vocab-de">Das neue Regierungsbündnis hat seinen Koalitionsvertrag vorgestellt.</div>
+<div class="vocab-ex-zh">新政府聯盟展示了其聯合執政協議。</div>
+</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-head">
+<span class="vocab-word">Aufsichtsrat</span>
+<span class="vocab-pos">der</span>
+<span class="vocab-meaning">監事會/監督委員會</span>
+<span class="ts-link" data-time="11:42">🔊 11:42</span>
+</div>
+<div class="vocab-example">
+<div class="vocab-de">Nach einer Sitzung des Aufsichtsrates bestätigt.</div>
+<div class="vocab-ex-zh">在監事會會議後確認。</div>
+</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-head">
+<span class="vocab-word">Reformstaatsvertrag</span>
+<span class="vocab-pos">der</span>
+<span class="vocab-meaning">改革國家條約</span>
+<span class="ts-link" data-time="12:02">🔊 12:02</span>
+</div>
+<div class="vocab-example">
+<div class="vocab-de">Wie sie die Vorgaben des Reformstaatsvertrags erfüllen wollen.</div>
+<div class="vocab-ex-zh">他們打算如何履行改革國家條約中的要求。</div>
+</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-head">
+<span class="vocab-word">Strategische Unabhängigkeit</span>
+<span class="vocab-pos">die</span>
+<span class="vocab-meaning">戰略獨立性</span>
+<span class="ts-link" data-time="09:22">🔊 09:22</span>
+</div>
+<div class="vocab-example">
+<div class="vocab-de">Keine strategische Unabhängigkeit.</div>
+<div class="vocab-ex-zh">沒有戰略獨立性。</div>
+</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-head">
+<span class="vocab-word">Papiertiger</span>
+<span class="vocab-pos">der</span>
+<span class="vocab-meaning">紙老虎/無效的規定</span>
+<span class="ts-link" data-time="10:10">🔊 10:10</span>
+</div>
+<div class="vocab-example">
+<div class="vocab-de">Dann wird es zum Papiertiger.</div>
+<div class="vocab-ex-zh">那麼它就會變成一張紙老虎。</div>
 </div>
 </div>
 </div>
@@ -1602,37 +1810,49 @@ summary: "Fünfter Tag im Nahost-Krieg: Angriffe gehen weiter、Aktuelle Stunde 
 
 
 <details>
-<summary><strong>Konjunktiv I (間接引語)</strong> <span class="ts-link" data-time="01:01">🔊 01:01</span></summary>
+<summary><strong>Konjunktiv II (間接引語/假設)</strong> <span class="ts-link" data-time="10:04">🔊 10:04</span></summary>
 
-> **德文**：Aus dem türkischen Außenministerium hieß es zunächst, die Rakete sollte Zypern treffen und sei vom Kurs abgekommen.
+> **德文**：Wenn das jetzt so weit gefasst ist, dass die halbe Welt Teil von Made in Europe ist...
 >
-> **中文**：土耳其外交部最初表示，該火箭本應擊中塞浦路斯，但偏離了航線。
+> **中文**：如果現在定義得這麼廣泛，以至於半個世界都是歐洲製造的一部分...
 
-新聞中轉述官方說法時常用 Konjunktiv I (sei, sollte) 來區分事實與轉述內容，避免直接引用原話，保持客觀性。
+這裡使用 'wenn' 引導的條件句，表達假設情況。在 B1 級別新聞中，常用來討論政策後果或批評現狀。
 
 </details>
 
 
 <details>
-<summary><strong>Passiv (被動語態)</strong> <span class="ts-link" data-time="01:32">🔊 01:32</span></summary>
+<summary><strong>Passiv mit 'werden' (被動語態)</strong> <span class="ts-link" data-time="12:20">🔊 12:20</span></summary>
 
-> **德文**：32 Menschen wurden in Krankenhäuser gebracht.
+> **德文**：Die Kanäle Neo und Info werden vom nächsten Jahr an gemeinsam geführt.
 >
-> **中文**：32 人被送往醫院。
+> **中文**：Neo 和 Info 頻道將從明年開始共同管理。
 
-使用 "wurden ... gebracht" (werden + Partizip II) 的 Präteritum Passiv，強調受事者 "Menschen" 而非施事者，常見於新聞報導受害者情況。
+使用 'werden' + Partizip II 構成現在被動或未來被動，強調動作本身而非執行者，常見於政策宣佈。
 
 </details>
 
 
 <details>
-<summary><strong>zu + Infinitiv (不定詞片語)</strong> <span class="ts-link" data-time="05:33">🔊 05:33</span></summary>
+<summary><strong>zu + Infinitiv (不定式結構)</strong> <span class="ts-link" data-time="05:33">🔊 05:33</span></summary>
 
-> **德文**：Deutschland wird alles daran setzen, zur Deeskalation beizutragen.
+> **德文**：
 >
-> **中文**：德國將盡一切努力為緩和局勢做出貢獻。
+> **中文**：德國將盡一切努力促進局勢降溫。
 
-"daran setzen" 後接 "zu + Infinitiv" 結構 (beitragen)，表示 "致力於做某事"，這是 B1 級別常見的動詞搭配與不定詞用法。
+動詞 'beitragen' 後接 'zu' + 名詞化動詞 'Deeskalation'，構成 'zu + Infinitiv' 結構，表示目的或結果。
+
+</details>
+
+
+<details>
+<summary><strong>Komparativ/Superlativ (比較級/最高級)</strong> <span class="ts-link" data-time="13:46">🔊 13:46</span></summary>
+
+> **德文**：Das ist ein mutiger, aber auch ein notwendiger Schritt.
+>
+> **中文**：這是一個勇敢但也必要的一步。
+
+使用形容詞 'mutig' 和 'notwendig' 來修飾名詞 'Schritt'，表達對政策行動的評價。
 
 </details>
 
@@ -1644,26 +1864,52 @@ summary: "Fünfter Tag im Nahost-Krieg: Angriffe gehen weiter、Aktuelle Stunde 
 
 <div class="pattern-card">
 <div class="pattern-head">
-<strong>Nominativ + Präteritum (Passiv) + Partizip II (被動描述)</strong>
-<span class="ts-link" data-time="00:51">🔊 00:51</span>
+<strong>etwas ist eine Herausforderung für (某事是...的挑戰)</strong>
+<span class="ts-link" data-time="05:10">🔊 05:10</span>
 </div>
 <div class="pattern-body">
-<div class="pattern-de">🇩🇪 Ein Kran zieht Raketentrümmer im Süden der Türkei aus dem Wasser.</div>
-<div class="pattern-zh">🇹🇼 一台起重機從土耳其南部的海水中撈起火箭殘骸。</div>
-<div class="pattern-note">💡 雖然此句為主動語態，但新聞中常與被動句交替使用來描述災難現場，如 "wurden ... gebracht" (01:32) 或 "wird ... abgeschaltet" (12:14)。此處展示的是複雜地點狀語的置入。</div>
+<div class="pattern-de">🇩🇪 Der Krieg im Iran ist eine Herausforderung für die Bundesregierung.</div>
+<div class="pattern-zh">🇹🇼 伊朗戰爭對德國聯邦政府來說是一個挑戰。</div>
+<div class="pattern-note">💡 常用於描述政治或社會問題，表達某種情況帶來的困難或壓力。</div>
 </div>
 </div>
 
 
 <div class="pattern-card">
 <div class="pattern-head">
-<strong>Konjunktiv II (Spekulation / Vermutung)</strong>
-<span class="ts-link" data-time="03:47">🔊 03:47</span>
+<strong>etwas wird als etwas bezeichnet (某事被稱為...)</strong>
+<span class="ts-link" data-time="07:23">🔊 07:23</span>
 </div>
 <div class="pattern-body">
-<div class="pattern-de">🇩🇪 Das könnte möglicherweise, das ist Spekulation, sich gegen die NATO-Basis in der Türkei gerichtet haben.</div>
-<div class="pattern-zh">🇹🇼 這可能是針對土耳其境內的北約基地，這是一種猜測。</div>
-<div class="pattern-note">💡 使用 "könnte ... gerichtet haben" (Konjunktiv II + Perfekt) 表達對過去事件動機的推測與不確定性，是新聞分析中常用的語氣。</div>
+<div class="pattern-de">🇩🇪 Qatar erklärte die sogenannte Force Majeure.</div>
+<div class="pattern-zh">🇹🇼 卡塔爾宣佈了所謂的不可抗力。</div>
+<div class="pattern-note">💡 使用 'sogenannte' 來引用特定術語或概念，常帶有客觀描述或輕微保留意味。</div>
+</div>
+</div>
+
+
+<div class="pattern-card">
+<div class="pattern-head">
+<strong>etwas ist von Bedeutung für (某事對...很重要)</strong>
+<span class="ts-link" data-time="05:03">🔊 05:03</span>
+</div>
+<div class="pattern-body">
+<div class="pattern-de">🇩🇪 Das gilt auch für Spanien.</div>
+<div class="pattern-zh">🇹🇼 這也適用於西班牙。</div>
+<div class="pattern-note">💡 使用 'gelten' 表示「適用」或「有效」，常用於政策或原則的延伸應用。</div>
+</div>
+</div>
+
+
+<div class="pattern-card">
+<div class="pattern-head">
+<strong>etwas ist ein Papiertiger (某事是紙老虎)</strong>
+<span class="ts-link" data-time="10:10">🔊 10:10</span>
+</div>
+<div class="pattern-body">
+<div class="pattern-de">🇩🇪 Dann wird es zum Papiertiger.</div>
+<div class="pattern-zh">🇹🇼 那麼它就會變成一張紙老虎。</div>
+<div class="pattern-note">💡 這是一個諷刺性的比喻，指看似強大但實際上無效或無法執行的規定或承諾。</div>
 </div>
 </div>
 
