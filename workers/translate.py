@@ -372,38 +372,3 @@ def analyze_cefr(timestamped_transcript: str) -> dict:
     return {"summary_zh": summary_zh, "levels": fallback}
 
 
-def translate_and_analyze(segments: list[dict]) -> dict:
-    """主函式：翻譯逐字稿並產生 CEFR 學習內容。
-
-    回傳 dict：
-        segments: 翻譯後的 segments（含 de + zh）
-        levels: CEFR 學習內容（A1, A2, B1）
-    """
-    # 測試模式：限制批次數
-    max_batches = int(os.getenv("MAX_BATCHES", "0")) or None
-
-    # 分批翻譯
-    all_translated = []
-    for i in range(0, len(segments), BATCH_SIZE):
-        batch = segments[i:i + BATCH_SIZE]
-        batch_num = i // BATCH_SIZE + 1
-        total_batches = (len(segments) + BATCH_SIZE - 1) // BATCH_SIZE
-        if max_batches and batch_num > max_batches:
-            logger.info(f"測試模式：已達 {max_batches} 批上限，跳過剩餘批次")
-            break
-        logger.info(f"翻譯第 {batch_num}/{total_batches} 批（{len(batch)} segments）")
-        translated = translate_batch(batch)
-        all_translated.extend(translated)
-
-    # 組合帶時間戳的全文送 CEFR 分析
-    timestamped_transcript = "\n".join(
-        f"[{s['start']}] {s['text']}" for s in segments
-    )
-    logger.info("開始 CEFR 學習內容分析...")
-    cefr_result = analyze_cefr(timestamped_transcript)
-
-    return {
-        "segments": all_translated,
-        "levels": cefr_result["levels"],
-        "summary_zh": cefr_result["summary_zh"],
-    }

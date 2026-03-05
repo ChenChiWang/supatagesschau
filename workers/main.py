@@ -136,9 +136,6 @@ def main():
             logger.info("  （從舊版合併快取提取翻譯）")
         else:
             raise FileNotFoundError("找不到翻譯快取，請先跑完翻譯")
-    elif resume_from >= 4:
-        logger.info("🔤 Step 3a: 載入翻譯快取...")
-        translated_segments = load_cache(CACHE_TRANSLATED)
     else:
         logger.info("🔤 Step 3a: 翻譯...")
         translated_segments = run_translation(segments)
