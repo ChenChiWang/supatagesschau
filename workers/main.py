@@ -135,6 +135,7 @@ def main():
         podcast_meta["video_offset"] = video_offset
         save_cache(CACHE_PODCAST, serialize_podcast_meta(podcast_meta))
         logger.info(f"  影片偏移：{video_offset}s")
+    notify.send(f"🔀 *Step 1b 偏移計算*\n影片偏移：{video_offset}s")
 
     # 2. Whisper 轉錄
     if resume_from >= 3:
