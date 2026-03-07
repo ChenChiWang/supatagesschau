@@ -70,7 +70,7 @@ def compute_offset(audio_path: str, video_path: str) -> float:
     else:
         lag_samples = max_idx
 
-    offset_sec = lag_samples / SAMPLE_RATE
+    offset_sec = -lag_samples / SAMPLE_RATE
 
     # 合理範圍檢查（超過 30 秒的偏移不太可能）
     if abs(offset_sec) > 30:
