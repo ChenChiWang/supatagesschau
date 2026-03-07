@@ -126,7 +126,7 @@ def main():
         logger.info("🔀 Step 1b: 計算影片偏移量...")
         try:
             video_offset = download_and_align(
-                str(podcast_meta["mp3_path"]),
+                podcast_meta["audio_url"],
                 podcast_meta["video_url"],
             )
         except Exception as e:

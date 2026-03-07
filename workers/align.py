@@ -6,8 +6,6 @@
 
 import logging
 import subprocess
-import tempfile
-from pathlib import Path
 
 import numpy as np
 
@@ -83,35 +81,18 @@ def compute_offset(audio_path: str, video_path: str) -> float:
     return round(offset_sec, 2)
 
 
-def download_and_align(audio_path: str, video_url: str) -> float:
-    """下載影片前段並計算偏移。
+def download_and_align(audio_source: str, video_url: str) -> float:
+    """計算音訊與影片的時間偏移。
+
+    音訊來源可以是本地檔案路徑或 URL，ffmpeg 都能直接讀取。
 
     Args:
-        audio_path: 本地音訊 MP3 路徑
+        audio_source: 音訊 MP3 路徑或 URL
         video_url: 影片 URL
 
     Returns:
         偏移秒數
     """
-    import requests
-
-    logger.info(f"下載影片前 {DURATION_SEC} 秒用於對齊...")
-
-    # 用 ffmpeg 直接從 URL 讀取前 N 秒（不需下載整個影片）
-    with tempfile.NamedTemporaryFile(suffix=".mp4", delete=False) as tmp:
-        tmp_path = tmp.name
-
-    try:
-        cmd = [
-            "ffmpeg", "-i", video_url,
-            "-t", str(DURATION_SEC),
-            "-c", "copy",
-            "-v", "quiet",
-            "-y", tmp_path,
-        ]
-        subprocess.run(cmd, check=True, timeout=120)
-        offset = compute_offset(audio_path, tmp_path)
-    finally:
-        Path(tmp_path).unlink(missing_ok=True)
-
-    return offset
+    logger.info("從音訊和影片 URL 提取 PCM 進行對齊...")
+    # ffmpeg 可直接從 URL 讀取，不需先下載
+    return compute_offset(audio_source, video_url)
