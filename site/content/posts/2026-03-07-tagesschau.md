@@ -9,6 +9,7 @@ levels:
   - A2
   - B1
 video_url: "https://tagesschau-progressive.ard-mcdn.de/video/2026/0307/TV-20260307-2017-2800.webxl.h264.mp4"
+video_offset: -2.68
 audio_url: "https://tagesschau-podcast.ard-mcdn.de/audio/2026/0307/AU-20260307-2028-0100.mp3"
 summary: "tagesschau 20 Uhr"
 ---
