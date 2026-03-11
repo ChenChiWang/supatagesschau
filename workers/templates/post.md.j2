@@ -13,7 +13,7 @@ levels:
 video_url: "{{ video_url }}"
 video_offset: {{ video_offset }}
 audio_url: "{{ audio_url }}"
-summary: "{{ topics[:3] | join('、') }}"
+summary: {{ topics[:3] | join('、') | tojson }}
 ---
 
 {% raw %}{{< media-player >}}{% endraw %}

@@ -17,7 +17,7 @@ levels:
 video_url: "https://tagesschau-progressive.ard-mcdn.de/video/2026/0310/TV-20260310-2026-4600.webxl.h264.mp4"
 video_offset: 0.1
 audio_url: "https://tagesschau-podcast.ard-mcdn.de/audio/2026/0310/AU-20260310-2031-2900.mp3"
-summary: "Außenminister Wadephul zu Besuch in Israel、US-Präsident Trump sieht Iran-Krieg "so gut wie beendet"、EU-Kommissionspräsidentin von der Leyen will Atomkraft stärker fördern"
+summary: "Außenminister Wadephul zu Besuch in Israel、US-Präsident Trump sieht Iran-Krieg 'so gut wie beendet'、EU-Kommissionspräsidentin von der Leyen will Atomkraft stärker fördern"
 ---
 
 {{< media-player >}}
