@@ -18,6 +18,38 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.35;
 }
 
+/* === 隱藏文章底部標籤 === */
+.post-tags {
+  display: none;
+}
+
+/* === 導覽列 icon 對齊 === */
+#menu {
+  display: flex;
+  align-items: center;
+}
+
+#menu li {
+  display: flex;
+  align-items: center;
+}
+
+#menu a svg,
+#menu button#theme-toggle svg {
+  vertical-align: middle;
+}
+
+#menu button#theme-toggle {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--primary);
+}
+
 /* === 播放器 === */
 .media-player {
   margin: 1.5rem 0;

@@ -25,9 +25,6 @@ paginate = 10
     [[params.profileMode.buttons]]
       name = "📰 所有文章"
       url = "/archives/"
-    [[params.profileMode.buttons]]
-      name = "🏷️ 主題標籤"
-      url = "/tags/"
 
   [[params.socialIcons]]
     name = "rss"
@@ -46,11 +43,6 @@ paginate = 10
   home = ["HTML", "RSS", "JSON"]
 
 [[menu.main]]
-  name = "首頁"
+  name = "🏠"
   url = "/"
   weight = 1
-
-[[menu.main]]
-  name = "標籤"
-  url = "/tags/"
-  weight = 2

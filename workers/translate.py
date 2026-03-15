@@ -278,10 +278,35 @@ def analyze_cefr(timestamped_transcript: str) -> dict:
 2. 所有 meaning、example_zh、chinese、explanation、translation、note 欄位必須是繁體中文
 3. 只有 word、example、german、pattern 這些「德語原文」欄位才用德文
 
-分級標準：
-- A1（初學者）：最基礎的詞彙和句型（sein/haben、現在式、W-Fragen、基本語序 SVO）
-- A2（初級）：日常生活進階（Perfekt/Präteritum、weil/dass 從句、Dativ 介詞、反身動詞）
-- B1（中級）：新聞理解所需（Konjunktiv II、Passiv、zu+Infinitiv、間接引語、複雜從句）
+分級標準（依據 Goethe-Zertifikat 考試範圍）：
+
+🟢 A1（入門級，約 650 核心詞彙）：
+  文法範圍：現在式規則動詞變位、sein/haben 變位、情態動詞（können/müssen/möchten/wollen/dürfen）、
+    可分動詞（anfangen/aufstehen/einkaufen）、命令式、Nominativ 和 Akkusativ、
+    基本句型 SVO、W-Fragen、Ja/Nein-Fragen、否定 nicht/kein、
+    人稱代詞、所有格冠詞（mein/dein/sein/ihr）、介詞（in/aus/nach/bei/mit/zu）、
+    基本連接詞 und/oder/aber
+  詞彙主題：個人資訊、家庭、住所、飲食、日常活動、購物、交通、身體健康、
+    天氣季節、數字時間、基本形容詞（groß/klein/gut/schlecht/neu/alt）
+
+🟠 A2（初級，約 1300 核心詞彙）：
+  文法範圍：現在完成式 Perfekt（haben/sein + Partizip II）、過去式 Präteritum（sein/haben/werden/情態動詞）、
+    詞幹變位動詞（fahren→fährst/lesen→liest/sprechen→spricht）、反身動詞（sich freuen/sich treffen）、
+    Dativ 格（含 Dativ 介詞 aus/bei/mit/nach/seit/von/zu）、Wechselpräpositionen（in/an/auf/über/unter/vor/hinter/neben/zwischen）、
+    weil/dass/wenn/ob 從句（動詞放句尾）、比較級和最高級、
+    代副詞（dafür/damit/darüber）、不定代詞（man/jemand/niemand/etwas/nichts）
+  詞彙主題：職場工作、旅遊度假、媒體通訊、環境自然、教育學習、
+    社交互動、服務機構（銀行/郵局/醫院）、頻率副詞（oft/selten/manchmal/immer）
+
+🔴 B1（中級，約 2400 核心詞彙）：
+  文法範圍：虛擬式二 Konjunktiv II（würde + Infinitiv、wäre/hätte/könnte/müsste/sollte）、
+    被動語態 Passiv（werden + Partizip II）、關係子句 Relativsätze（der/die/das/dem/den）、
+    zu + Infinitiv 結構（um...zu/ohne...zu/anstatt...zu）、間接引語、
+    Plusquamperfekt（過去完成式 hatte/war + Partizip II）、Futur I（werden + Infinitiv）、
+    讓步從句 obwohl/trotzdem、目的從句 damit/um...zu、
+    Genitiv 格、雙向介詞的抽象用法、n-Deklination
+  詞彙主題：政治社會、經濟就業、科技媒體、文化藝術、國際關係、
+    法律權利、環境氣候、抽象概念（Meinung/Erfahrung/Zusammenhang/Entwicklung）
 
 提取目標（盡量填滿，從逐字稿中多找例子）：
 - 單字 Wortschatz：A1 約 8 個、A2 約 10 個、B1 約 10 個

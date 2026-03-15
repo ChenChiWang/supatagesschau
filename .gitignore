@@ -26,5 +26,8 @@ Thumbs.db
 .vscode/
 .idea/
 
+# 知識庫（本地參考用，不上傳）
+knowledge-base/
+
 # Claude Code
 .claude/
