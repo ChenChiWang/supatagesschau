@@ -21,8 +21,8 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
     labels:
-      # UTC 19:30 = CET 20:30 = 台灣 03:30
-      ofelia.job-run.tagesschau.schedule: "0 30 19 * * *"
+      # UTC 20:30 = CET 21:30 = 台灣 04:30
+      ofelia.job-run.tagesschau.schedule: "0 30 20 * * *"
       ofelia.job-run.tagesschau.container: "pipeline"
     restart: unless-stopped
 
