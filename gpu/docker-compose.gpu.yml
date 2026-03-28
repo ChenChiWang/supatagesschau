@@ -10,6 +10,7 @@ services:
     environment:
       - OLLAMA_HOST=0.0.0.0:11434
       - OLLAMA_NUM_PARALLEL=1
+      - OLLAMA_KEEP_ALIVE=-1
     volumes:
       - ollama_data:/root/.ollama
     ipc: host
@@ -70,6 +71,31 @@ services:
       - gpu-network
     depends_on:
       - ollama
+
+  # 啟動後自動載入模型到 GPU，確保不會 fallback 到 CPU
+  ollama-preload:
+    image: curlimages/curl:latest
+    container_name: ollama-preload
+    depends_on:
+      - ollama
+    restart: "no"
+    networks:
+      - gpu-network
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        echo "等待 Ollama 啟動..."
+        until curl -sf http://ollama:11434/api/tags > /dev/null 2>&1; do
+          sleep 2
+        done
+        echo "Ollama 已就緒，開始預載模型..."
+        echo "載入 qwen3.5:27b..."
+        curl -sf http://ollama:11434/api/chat -d '{"model":"qwen3.5:27b","messages":[{"role":"user","content":"hi"}],"options":{"num_predict":1},"think":false}'
+        echo ""
+        echo "載入 qwen3.5:35b..."
+        curl -sf http://ollama:11434/api/chat -d '{"model":"qwen3.5:35b","messages":[{"role":"user","content":"hi"}],"options":{"num_predict":1},"think":false}'
+        echo ""
+        echo "模型預載完成"
 
 volumes:
   ollama_data:
