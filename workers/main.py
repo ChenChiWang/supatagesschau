@@ -9,6 +9,8 @@
                       可選值：2（跳過 podcast）、3（跳過轉錄）、
                              3.5（跳過翻譯，只重跑 CEFR）、
                              4（跳過翻譯+CEFR）、5（只推送）
+  TARGET_DATE=YYYY-MM-DD  指定日期，從 RSS 歷史中搜尋該日集數（補跑用）
+  SKIP_DATE_CHECK=1       跳過日期檢查，直接用最新集數（測試用）
 """
 
 import json

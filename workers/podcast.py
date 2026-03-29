@@ -29,46 +29,16 @@ def get_latest_episode(feed: feedparser.FeedParserDict) -> dict:
     """從 feed 取出最新一集的 metadata。"""
     if not feed.entries:
         raise RuntimeError("RSS feed 沒有任何集數")
-    entry = feed.entries[0]
-
-    # 解析 pubDate（struct_time → datetime）
-    pub_struct = entry.get("published_parsed")
-    if pub_struct:
-        pub_dt = datetime(*pub_struct[:6], tzinfo=CET)
-    else:
-        pub_dt = None
-
-    # 取得 enclosure URL
-    enclosure_url = ""
-    enclosure_type = ""
-    for link in entry.get("links", []):
-        if link.get("rel") == "enclosure":
-            enclosure_url = link.get("href", "")
-            enclosure_type = link.get("type", "")
-            break
-    if not enclosure_url and hasattr(entry, "enclosures") and entry.enclosures:
-        enc = entry.enclosures[0]
-        enclosure_url = enc.get("href", enc.get("url", ""))
-        enclosure_type = enc.get("type", "")
-
-    return {
-        "title": entry.get("title", ""),
-        "pub_date": pub_dt,
-        "description": entry.get("summary", entry.get("description", "")),
-        "enclosure_url": enclosure_url,
-        "enclosure_type": enclosure_type,
-        "duration": entry.get("itunes_duration", ""),
-        "guid": entry.get("id", ""),
-        "link": entry.get("link", ""),
-    }
+    return parse_entry(feed.entries[0])
 
 
-def is_today(pub_dt: datetime) -> bool:
-    """檢查 pub_date 是否為今天（CET 時區）。"""
+def is_target_date(pub_dt: datetime, target: datetime.date = None) -> bool:
+    """檢查 pub_date 是否為目標日期（預設今天，CET 時區）。"""
     if pub_dt is None:
         return False
-    now_cet = datetime.now(CET)
-    return pub_dt.date() == now_cet.date()
+    if target is None:
+        target = datetime.now(CET).date()
+    return pub_dt.date() == target
 
 
 def download_mp3(url: str, output_dir: Path) -> Path:
@@ -85,24 +55,85 @@ def download_mp3(url: str, output_dir: Path) -> Path:
     return filepath
 
 
-def fetch_podcast() -> dict:
-    """主函式：取得今天的 Podcast metadata 並下載 MP3。
+def find_episode_by_date(feed: feedparser.FeedParserDict, target: datetime.date) -> dict | None:
+    """從 feed 中找出指定日期的集數。"""
+    for entry in feed.entries:
+        pub_struct = entry.get("published_parsed")
+        if pub_struct:
+            pub_dt = datetime(*pub_struct[:6], tzinfo=CET)
+            if pub_dt.date() == target:
+                return parse_entry(entry)
+    return None
 
-    含重試機制：若最新集不是今天的，等待後重試。
-    設定環境變數 SKIP_DATE_CHECK=1 可跳過日期檢查（測試用）。
+
+def parse_entry(entry) -> dict:
+    """將 feedparser entry 轉為 metadata dict。"""
+    pub_struct = entry.get("published_parsed")
+    pub_dt = datetime(*pub_struct[:6], tzinfo=CET) if pub_struct else None
+
+    enclosure_url = ""
+    for link in entry.get("links", []):
+        if link.get("rel") == "enclosure":
+            enclosure_url = link.get("href", "")
+            break
+    if not enclosure_url and hasattr(entry, "enclosures") and entry.enclosures:
+        enc = entry.enclosures[0]
+        enclosure_url = enc.get("href", enc.get("url", ""))
+
+    return {
+        "title": entry.get("title", ""),
+        "pub_date": pub_dt,
+        "description": entry.get("summary", entry.get("description", "")),
+        "enclosure_url": enclosure_url,
+        "duration": entry.get("itunes_duration", ""),
+        "guid": entry.get("id", ""),
+        "link": entry.get("link", ""),
+    }
+
+
+def fetch_podcast() -> dict:
+    """主函式：取得 Podcast metadata 並下載 MP3。
+
+    含重試機制：若最新集不是目標日期的，等待後重試。
+
+    環境變數：
+        TARGET_DATE=YYYY-MM-DD  指定日期（補跑用），從 RSS 歷史中搜尋
+        SKIP_DATE_CHECK=1       跳過日期檢查，直接用最新集數（測試用）
 
     回傳 dict 包含：
         title, pub_date, description, audio_url, video_url,
         duration, guid, mp3_path, topics
     """
     skip_date = os.getenv("SKIP_DATE_CHECK", "") == "1"
+    target_date_str = os.getenv("TARGET_DATE", "")
+
+    # 解析目標日期
+    target_date = None
+    if target_date_str:
+        target_date = datetime.strptime(target_date_str, "%Y-%m-%d").date()
+        logger.info(f"指定目標日期：{target_date}")
 
     for attempt in range(1, config.MAX_RETRIES + 1):
         logger.info(f"嘗試取得 Podcast（第 {attempt}/{config.MAX_RETRIES} 次）")
 
-        # 解析 Audio 和 Video feed
         audio_feed = parse_feed(config.AUDIO_RSS_URL)
         video_feed = parse_feed(config.VIDEO_RSS_URL)
+
+        # 指定日期模式：從歷史中搜尋
+        if target_date:
+            audio_ep = find_episode_by_date(audio_feed, target_date)
+            video_ep = find_episode_by_date(video_feed, target_date)
+            if audio_ep and video_ep:
+                logger.info(f"找到 {target_date} 的集數：{audio_ep['title']}")
+                break
+            if attempt < config.MAX_RETRIES:
+                logger.warning(
+                    f"RSS 中找不到 {target_date} 的集數，"
+                    f"{config.RETRY_INTERVAL_SEC} 秒後重試..."
+                )
+                time.sleep(config.RETRY_INTERVAL_SEC)
+                continue
+            raise RuntimeError(f"RSS 中找不到 {target_date} 的音訊或影片集數")
 
         audio_ep = get_latest_episode(audio_feed)
         video_ep = get_latest_episode(video_feed)
@@ -111,7 +142,7 @@ def fetch_podcast() -> dict:
             logger.info(f"跳過日期檢查，使用最新集數：{audio_ep['title']}")
             break
 
-        if is_today(audio_ep["pub_date"]):
+        if is_target_date(audio_ep["pub_date"]):
             logger.info(f"找到今天的集數：{audio_ep['title']}")
             break
 
