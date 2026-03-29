@@ -1,7 +1,14 @@
-# DGX Spark (GB10) — Ollama + Whisper + Cloudflare Tunnel
+# DGX Spark (GB10) — GPU 服務統一管理
 # GB10 使用統一記憶體架構（UMA），需要特殊的 ulimit / shm / ipc 設定
+#
+# 服務說明：
+#   ollama          — LLM 推論（Tagesschau 翻譯/CEFR + 其他 API）
+#   ollama-preload  — 啟動時預載模型常駐 GPU
+#   whisper         — WhisperX 語音轉錄（僅 Tagesschau pipeline 使用）
+#   cloudflared     — Cloudflare Tunnel，將 Ollama API 對外暴露給其他服務使用
 
 services:
+  # ── 共用基礎設施 ──────────────────────────────────
   ollama:
     image: ollama/ollama:0.18.2
     container_name: ollama
@@ -33,6 +40,7 @@ services:
     networks:
       - gpu-network
 
+  # ── Tagesschau pipeline 專用 ───────────────────────
   whisper:
     image: mekopa/whisperx-blackwell:latest
     container_name: whisper
@@ -40,6 +48,8 @@ services:
       - "9000:8003"
     environment:
       - HF_TOKEN=${HF_TOKEN:-}
+    volumes:
+      - whisper_cache:/root/.cache
     ipc: host
     shm_size: "16g"
     ulimits:
@@ -60,6 +70,7 @@ services:
     networks:
       - gpu-network
 
+  # ── 對外存取 ─────────────────────────────────────
   cloudflared:
     image: cloudflare/cloudflared:latest
     container_name: cloudflared
@@ -99,6 +110,7 @@ services:
 
 volumes:
   ollama_data:
+  whisper_cache:
 
 networks:
   gpu-network:
