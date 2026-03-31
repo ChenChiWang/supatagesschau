@@ -89,7 +89,7 @@ services:
     container_name: ollama-preload
     depends_on:
       - ollama
-    restart: "no"
+    restart: unless-stopped
     networks:
       - gpu-network
     entrypoint: ["/bin/sh", "-c"]
@@ -106,7 +106,8 @@ services:
         echo "載入 qwen3.5:35b..."
         curl -sf http://ollama:11434/api/chat -d '{"model":"qwen3.5:35b","messages":[{"role":"user","content":"hi"}],"options":{"num_predict":1},"think":false}'
         echo ""
-        echo "模型預載完成"
+        echo "模型預載完成，保持容器運行"
+        exec sleep infinity
 
 volumes:
   ollama_data:

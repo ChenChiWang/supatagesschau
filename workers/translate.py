@@ -5,12 +5,17 @@ import json
 import logging
 import os
 import re
+import time
 
 import requests
 
 import config
 
 logger = logging.getLogger(__name__)
+
+# Ollama API 重試設定（處理 runner crash / 500 錯誤）
+OLLAMA_MAX_RETRIES = 3
+OLLAMA_RETRY_DELAYS = [30, 60, 120]  # 秒，遞增等待
 
 # 每批次最大 segment 數（約 2-3 分鐘的內容）
 BATCH_SIZE = 8
@@ -28,27 +33,52 @@ def call_ollama(
     num_ctx: int = 8192,
     num_predict: int = 8192,
 ) -> str:
-    """呼叫 Ollama API（chat endpoint），回傳生成的文字。"""
+    """呼叫 Ollama API（chat endpoint），回傳生成的文字。
+    遇到 5xx 錯誤自動重試，等待 Ollama runner 重新載入模型。"""
     use_model = model or config.OLLAMA_MODEL
-    resp = requests.post(
-        f"{config.OLLAMA_API_URL}/api/chat",
-        json={
-            "model": use_model,
-            "messages": [
-                {"role": "user", "content": prompt},
-            ],
-            "stream": False,
-            "think": False,
-            "options": {
-                "temperature": temperature,
-                "num_predict": num_predict,
-                "num_ctx": num_ctx,
-            },
+    payload = {
+        "model": use_model,
+        "messages": [
+            {"role": "user", "content": prompt},
+        ],
+        "stream": False,
+        "think": False,
+        "options": {
+            "temperature": temperature,
+            "num_predict": num_predict,
+            "num_ctx": num_ctx,
         },
-        timeout=1800,
-    )
-    resp.raise_for_status()
-    return resp.json()["message"]["content"]
+    }
+
+    for attempt in range(OLLAMA_MAX_RETRIES + 1):
+        try:
+            resp = requests.post(
+                f"{config.OLLAMA_API_URL}/api/chat",
+                json=payload,
+                timeout=1800,
+            )
+            resp.raise_for_status()
+            return resp.json()["message"]["content"]
+        except requests.exceptions.HTTPError as e:
+            if resp.status_code >= 500 and attempt < OLLAMA_MAX_RETRIES:
+                delay = OLLAMA_RETRY_DELAYS[attempt]
+                logger.warning(
+                    f"Ollama 回傳 {resp.status_code}，"
+                    f"{delay}s 後重試（{attempt + 1}/{OLLAMA_MAX_RETRIES}）"
+                )
+                time.sleep(delay)
+                continue
+            raise
+        except (requests.exceptions.ConnectionError, requests.exceptions.Timeout) as e:
+            if attempt < OLLAMA_MAX_RETRIES:
+                delay = OLLAMA_RETRY_DELAYS[attempt]
+                logger.warning(
+                    f"Ollama 連線失敗：{e}，"
+                    f"{delay}s 後重試（{attempt + 1}/{OLLAMA_MAX_RETRIES}）"
+                )
+                time.sleep(delay)
+                continue
+            raise
 
 
 def fix_json_newlines(text: str) -> str:
